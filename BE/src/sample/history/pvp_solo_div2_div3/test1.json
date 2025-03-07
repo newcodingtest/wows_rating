@@ -1,0 +1,2833 @@
+{
+    "status": "ok",
+    "meta": {
+        "count": 1,
+        "hidden": null
+    },
+    "data": {
+        "2020639284": [
+            {
+                "ship_id": 4077828048,
+                "last_battle_time": 1672390211,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1672390630
+            },
+            {
+                "ship_id": 4284430032,
+                "last_battle_time": 1725808783,
+                "pvp_solo": {
+                    "capture_points": 10,
+                    "wins": 12,
+                    "losses": 12,
+                    "battles": 24,
+                    "max_damage_scouting": 39439,
+                    "team_capture_points": 2641,
+                    "frags": 8,
+                    "damage_scouting": 168077,
+                    "max_damage_dealt": 113181,
+                    "max_total_agro": 1555500
+                },
+                "updated_at": 1725809491
+            },
+            {
+                "ship_id": 4179572528,
+                "last_battle_time": 1631954692,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 1,
+                    "losses": 2,
+                    "battles": 3,
+                    "max_damage_scouting": 26673,
+                    "team_capture_points": 240,
+                    "frags": 0,
+                    "damage_scouting": 28211,
+                    "max_damage_dealt": 95718,
+                    "max_total_agro": 3435399
+                },
+                "updated_at": 1735928832
+            },
+            {
+                "ship_id": 4183766864,
+                "last_battle_time": 1567573974,
+                "pvp_solo": {
+                    "capture_points": 12,
+                    "wins": 8,
+                    "losses": 3,
+                    "battles": 11,
+                    "max_damage_scouting": 19367,
+                    "team_capture_points": 1600,
+                    "frags": 12,
+                    "damage_scouting": 78743,
+                    "max_damage_dealt": 94060,
+                    "max_total_agro": 1698568
+                },
+                "updated_at": 1567574797
+            },
+            {
+                "ship_id": 4185864144,
+                "last_battle_time": 1566215216,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 1,
+                    "losses": 1,
+                    "battles": 2,
+                    "max_damage_scouting": 5522,
+                    "team_capture_points": 0,
+                    "frags": 5,
+                    "damage_scouting": 9664,
+                    "max_damage_dealt": 81730,
+                    "max_total_agro": 1820500
+                },
+                "updated_at": 1566216265
+            },
+            {
+                "ship_id": 4182685136,
+                "last_battle_time": 1707909729,
+                "pvp_solo": {
+                    "capture_points": 57,
+                    "wins": 3,
+                    "losses": 3,
+                    "battles": 6,
+                    "max_damage_scouting": 41254,
+                    "team_capture_points": 660,
+                    "frags": 2,
+                    "damage_scouting": 84063,
+                    "max_damage_dealt": 74774,
+                    "max_total_agro": 1162350
+                },
+                "updated_at": 1707910476
+            },
+            {
+                "ship_id": 4180555056,
+                "last_battle_time": 1672199457,
+                "pvp_solo": {
+                    "capture_points": 310,
+                    "wins": 2,
+                    "losses": 4,
+                    "battles": 6,
+                    "max_damage_scouting": 176865,
+                    "team_capture_points": 839,
+                    "frags": 4,
+                    "damage_scouting": 411972,
+                    "max_damage_dealt": 85740,
+                    "max_total_agro": 630550
+                },
+                "updated_at": 1672199731
+            },
+            {
+                "ship_id": 4182718288,
+                "last_battle_time": 1582668142,
+                "pvp_solo": {
+                    "capture_points": 73,
+                    "wins": 6,
+                    "losses": 5,
+                    "battles": 11,
+                    "max_damage_scouting": 22128,
+                    "team_capture_points": 1165,
+                    "frags": 7,
+                    "damage_scouting": 102499,
+                    "max_damage_dealt": 92755,
+                    "max_total_agro": 1404800
+                },
+                "updated_at": 1582669134
+            },
+            {
+                "ship_id": 4188976592,
+                "last_battle_time": 1616081438,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1616082104
+            },
+            {
+                "ship_id": 4184782672,
+                "last_battle_time": 1567006520,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 2,
+                    "losses": 3,
+                    "battles": 5,
+                    "max_damage_scouting": 41204,
+                    "team_capture_points": 300,
+                    "frags": 4,
+                    "damage_scouting": 89090,
+                    "max_damage_dealt": 56413,
+                    "max_total_agro": 1088500
+                },
+                "updated_at": 1567007184
+            },
+            {
+                "ship_id": 4180621104,
+                "last_battle_time": 1580545924,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 1,
+                    "battles": 1,
+                    "max_damage_scouting": 15858,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 15858,
+                    "max_damage_dealt": 18049,
+                    "max_total_agro": 1948666
+                },
+                "updated_at": 1580546262
+            },
+            {
+                "ship_id": 4185896656,
+                "last_battle_time": 1585425804,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 4,
+                    "losses": 14,
+                    "battles": 18,
+                    "max_damage_scouting": 33626,
+                    "team_capture_points": 1208,
+                    "frags": 16,
+                    "damage_scouting": 205401,
+                    "max_damage_dealt": 77886,
+                    "max_total_agro": 602200
+                },
+                "updated_at": 1585426620
+            },
+            {
+                "ship_id": 4181669680,
+                "last_battle_time": 1672313539,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 1,
+                    "losses": 1,
+                    "battles": 2,
+                    "max_damage_scouting": 32891,
+                    "team_capture_points": 120,
+                    "frags": 3,
+                    "damage_scouting": 47383,
+                    "max_damage_dealt": 68709,
+                    "max_total_agro": 1315669
+                },
+                "updated_at": 1672313977
+            },
+            {
+                "ship_id": 3744380368,
+                "last_battle_time": 1609383061,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1609383978
+            },
+            {
+                "ship_id": 4291704528,
+                "last_battle_time": 1616323813,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1616324755
+            },
+            {
+                "ship_id": 3552458448,
+                "last_battle_time": 1736590053,
+                "pvp_solo": {
+                    "capture_points": 120,
+                    "wins": 1,
+                    "losses": 2,
+                    "battles": 3,
+                    "max_damage_scouting": 29392,
+                    "team_capture_points": 481,
+                    "frags": 1,
+                    "damage_scouting": 46671,
+                    "max_damage_dealt": 32222,
+                    "max_total_agro": 410733
+                },
+                "updated_at": 1736590670
+            },
+            {
+                "ship_id": 4272830448,
+                "last_battle_time": 1680276033,
+                "pvp_solo": {
+                    "capture_points": 334,
+                    "wins": 5,
+                    "losses": 9,
+                    "battles": 14,
+                    "max_damage_scouting": 151440,
+                    "team_capture_points": 1500,
+                    "frags": 10,
+                    "damage_scouting": 790622,
+                    "max_damage_dealt": 99048,
+                    "max_total_agro": 1142634
+                },
+                "updated_at": 1680276263
+            },
+            {
+                "ship_id": 4079891920,
+                "last_battle_time": 1609483274,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1609484114
+            },
+            {
+                "ship_id": 4183799504,
+                "last_battle_time": 1608905529,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 2,
+                    "losses": 3,
+                    "battles": 5,
+                    "max_damage_scouting": 62904,
+                    "team_capture_points": 661,
+                    "frags": 3,
+                    "damage_scouting": 181827,
+                    "max_damage_dealt": 77079,
+                    "max_total_agro": 230532
+                },
+                "updated_at": 1608906731
+            },
+            {
+                "ship_id": 4182685488,
+                "last_battle_time": 1533137648,
+                "pvp_solo": {
+                    "capture_points": 207,
+                    "wins": 12,
+                    "losses": 15,
+                    "battles": 27,
+                    "max_damage_scouting": 44901,
+                    "team_capture_points": 3062,
+                    "frags": 8,
+                    "damage_scouting": 377790,
+                    "max_damage_dealt": 77627,
+                    "max_total_agro": 1638000
+                },
+                "updated_at": 1533138645
+            },
+            {
+                "ship_id": 4187928528,
+                "last_battle_time": 1566006462,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 1,
+                    "battles": 1,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 60,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 24325,
+                    "max_total_agro": 350700
+                },
+                "updated_at": 1566007271
+            },
+            {
+                "ship_id": 4184815408,
+                "last_battle_time": 1564863742,
+                "pvp_solo": {
+                    "capture_points": 73,
+                    "wins": 1,
+                    "losses": 4,
+                    "battles": 5,
+                    "max_damage_scouting": 12018,
+                    "team_capture_points": 421,
+                    "frags": 1,
+                    "damage_scouting": 13206,
+                    "max_damage_dealt": 42336,
+                    "max_total_agro": 735000
+                },
+                "updated_at": 1564864415
+            },
+            {
+                "ship_id": 4181603632,
+                "last_battle_time": 1672315252,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 3,
+                    "battles": 3,
+                    "max_damage_scouting": 47775,
+                    "team_capture_points": 60,
+                    "frags": 1,
+                    "damage_scouting": 59604,
+                    "max_damage_dealt": 54200,
+                    "max_total_agro": 1012550
+                },
+                "updated_at": 1672315715
+            },
+            {
+                "ship_id": 3340678960,
+                "last_battle_time": 1543671980,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1543672766
+            },
+            {
+                "ship_id": 4183734064,
+                "last_battle_time": 1532708488,
+                "pvp_solo": {
+                    "capture_points": 189,
+                    "wins": 18,
+                    "losses": 29,
+                    "battles": 47,
+                    "max_damage_scouting": 31400,
+                    "team_capture_points": 3363,
+                    "frags": 20,
+                    "damage_scouting": 449273,
+                    "max_damage_dealt": 75980,
+                    "max_total_agro": 819234
+                },
+                "updated_at": 1532709244
+            },
+            {
+                "ship_id": 4186912720,
+                "last_battle_time": 1566061798,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 2,
+                    "losses": 1,
+                    "battles": 3,
+                    "max_damage_scouting": 5720,
+                    "team_capture_points": 240,
+                    "frags": 2,
+                    "damage_scouting": 9039,
+                    "max_damage_dealt": 36528,
+                    "max_total_agro": 755800
+                },
+                "updated_at": 1566062471
+            },
+            {
+                "ship_id": 4078876624,
+                "last_battle_time": 1609054266,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 2,
+                    "losses": 2,
+                    "battles": 4,
+                    "max_damage_scouting": 16879,
+                    "team_capture_points": 300,
+                    "frags": 3,
+                    "damage_scouting": 30800,
+                    "max_damage_dealt": 61528,
+                    "max_total_agro": 796800
+                },
+                "updated_at": 1609054747
+            },
+            {
+                "ship_id": 3765352144,
+                "last_battle_time": 1609563938,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1609564252
+            },
+            {
+                "ship_id": 4181636912,
+                "last_battle_time": 1672313062,
+                "pvp_solo": {
+                    "capture_points": 180,
+                    "wins": 23,
+                    "losses": 35,
+                    "battles": 58,
+                    "max_damage_scouting": 121228,
+                    "team_capture_points": 6481,
+                    "frags": 29,
+                    "damage_scouting": 1181906,
+                    "max_damage_dealt": 98373,
+                    "max_total_agro": 2106501
+                },
+                "updated_at": 1672313426
+            },
+            {
+                "ship_id": 4180621136,
+                "last_battle_time": 1672153015,
+                "pvp_solo": {
+                    "capture_points": 30,
+                    "wins": 7,
+                    "losses": 5,
+                    "battles": 12,
+                    "max_damage_scouting": 72703,
+                    "team_capture_points": 1562,
+                    "frags": 9,
+                    "damage_scouting": 320726,
+                    "max_damage_dealt": 165778,
+                    "max_total_agro": 2369050
+                },
+                "updated_at": 1672153272
+            },
+            {
+                "ship_id": 4076778960,
+                "last_battle_time": 1740315834,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 1,
+                    "losses": 0,
+                    "battles": 1,
+                    "max_damage_scouting": 76464,
+                    "team_capture_points": 180,
+                    "frags": 0,
+                    "damage_scouting": 76464,
+                    "max_damage_dealt": 18462,
+                    "max_total_agro": 368800
+                },
+                "updated_at": 1740316544
+            },
+            {
+                "ship_id": 3750704848,
+                "last_battle_time": 1672199890,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 1,
+                    "losses": 0,
+                    "battles": 1,
+                    "max_damage_scouting": 75931,
+                    "team_capture_points": 120,
+                    "frags": 1,
+                    "damage_scouting": 75931,
+                    "max_damage_dealt": 110603,
+                    "max_total_agro": 538800
+                },
+                "updated_at": 1672200467
+            },
+            {
+                "ship_id": 4287575760,
+                "last_battle_time": 1534552607,
+                "pvp_solo": {
+                    "capture_points": 95,
+                    "wins": 11,
+                    "losses": 10,
+                    "battles": 21,
+                    "max_damage_scouting": 30206,
+                    "team_capture_points": 1982,
+                    "frags": 16,
+                    "damage_scouting": 190124,
+                    "max_damage_dealt": 63707,
+                    "max_total_agro": 1797300
+                },
+                "updated_at": 1534553374
+            },
+            {
+                "ship_id": 4179506480,
+                "last_battle_time": 1740672262,
+                "pvp_solo": {
+                    "capture_points": 1025,
+                    "wins": 14,
+                    "losses": 14,
+                    "battles": 28,
+                    "max_damage_scouting": 171093,
+                    "team_capture_points": 3844,
+                    "frags": 17,
+                    "damage_scouting": 1819746,
+                    "max_damage_dealt": 177437,
+                    "max_total_agro": 1319050
+                },
+                "updated_at": 1740673117
+            },
+            {
+                "ship_id": 3555670000,
+                "last_battle_time": 1609383322,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 3,
+                    "losses": 1,
+                    "battles": 4,
+                    "max_damage_scouting": 20067,
+                    "team_capture_points": 480,
+                    "frags": 3,
+                    "damage_scouting": 28256,
+                    "max_damage_dealt": 62730,
+                    "max_total_agro": 1320700
+                },
+                "updated_at": 1609383678
+            },
+            {
+                "ship_id": 4180555728,
+                "last_battle_time": 1707912169,
+                "pvp_solo": {
+                    "capture_points": 155,
+                    "wins": 2,
+                    "losses": 6,
+                    "battles": 8,
+                    "max_damage_scouting": 65217,
+                    "team_capture_points": 906,
+                    "frags": 0,
+                    "damage_scouting": 249673,
+                    "max_damage_dealt": 48665,
+                    "max_total_agro": 1538915
+                },
+                "updated_at": 1707912874
+            },
+            {
+                "ship_id": 4274927600,
+                "last_battle_time": 1739116837,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 2,
+                    "losses": 4,
+                    "battles": 6,
+                    "max_damage_scouting": 28726,
+                    "team_capture_points": 419,
+                    "frags": 16,
+                    "damage_scouting": 46491,
+                    "max_damage_dealt": 108407,
+                    "max_total_agro": 429885
+                },
+                "updated_at": 1739117427
+            },
+            {
+                "ship_id": 4185831248,
+                "last_battle_time": 1566668753,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1566669464
+            },
+            {
+                "ship_id": 4292786160,
+                "last_battle_time": 1531585831,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 1,
+                    "losses": 0,
+                    "battles": 1,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 180,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 10510,
+                    "max_total_agro": 305706
+                },
+                "updated_at": 1531586382
+            },
+            {
+                "ship_id": 4184750032,
+                "last_battle_time": 1538224077,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 1,
+                    "battles": 1,
+                    "max_damage_scouting": 11072,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 11072,
+                    "max_damage_dealt": 1122,
+                    "max_total_agro": 388600
+                },
+                "updated_at": 1538224850
+            },
+            {
+                "ship_id": 4293834736,
+                "last_battle_time": 1531730402,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 1,
+                    "battles": 1,
+                    "max_damage_scouting": 462,
+                    "team_capture_points": 0,
+                    "frags": 3,
+                    "damage_scouting": 462,
+                    "max_damage_dealt": 20795,
+                    "max_total_agro": 145100
+                },
+                "updated_at": 1531730913
+            },
+            {
+                "ship_id": 4281284304,
+                "last_battle_time": 1672204011,
+                "pvp_solo": {
+                    "capture_points": 89,
+                    "wins": 35,
+                    "losses": 27,
+                    "battles": 62,
+                    "max_damage_scouting": 70822,
+                    "team_capture_points": 7145,
+                    "frags": 21,
+                    "damage_scouting": 966417,
+                    "max_damage_dealt": 113569,
+                    "max_total_agro": 2386536
+                },
+                "updated_at": 1672204292
+            },
+            {
+                "ship_id": 4276041424,
+                "last_battle_time": 1735933849,
+                "pvp_solo": {
+                    "capture_points": 249,
+                    "wins": 55,
+                    "losses": 49,
+                    "battles": 104,
+                    "max_damage_scouting": 82360,
+                    "team_capture_points": 12702,
+                    "frags": 82,
+                    "damage_scouting": 1891498,
+                    "max_damage_dealt": 210786,
+                    "max_total_agro": 3580943
+                },
+                "updated_at": 1735934470
+            },
+            {
+                "ship_id": 4186846416,
+                "last_battle_time": 1739116279,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1739116698
+            },
+            {
+                "ship_id": 4181669712,
+                "last_battle_time": 1596452675,
+                "pvp_solo": {
+                    "capture_points": 22,
+                    "wins": 1,
+                    "losses": 3,
+                    "battles": 4,
+                    "max_damage_scouting": 3445,
+                    "team_capture_points": 480,
+                    "frags": 3,
+                    "damage_scouting": 7493,
+                    "max_damage_dealt": 53534,
+                    "max_total_agro": 1300800
+                },
+                "updated_at": 1596453647
+            },
+            {
+                "ship_id": 4180555600,
+                "last_battle_time": 1739960940,
+                "pvp_solo": {
+                    "capture_points": 427,
+                    "wins": 6,
+                    "losses": 3,
+                    "battles": 9,
+                    "max_damage_scouting": 41966,
+                    "team_capture_points": 1454,
+                    "frags": 4,
+                    "damage_scouting": 209438,
+                    "max_damage_dealt": 60914,
+                    "max_total_agro": 1398082
+                },
+                "updated_at": 1739961846
+            },
+            {
+                "ship_id": 4185863920,
+                "last_battle_time": 1618038211,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1618038950
+            },
+            {
+                "ship_id": 4183701328,
+                "last_battle_time": 1621658942,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1621659510
+            },
+            {
+                "ship_id": 4282267344,
+                "last_battle_time": 1740669029,
+                "pvp_solo": {
+                    "capture_points": 1396,
+                    "wins": 21,
+                    "losses": 18,
+                    "battles": 39,
+                    "max_damage_scouting": 265380,
+                    "team_capture_points": 4774,
+                    "frags": 25,
+                    "damage_scouting": 2352561,
+                    "max_damage_dealt": 162693,
+                    "max_total_agro": 1278236
+                },
+                "updated_at": 1740670238
+            },
+            {
+                "ship_id": 4077795024,
+                "last_battle_time": 1672318158,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1735926552
+            },
+            {
+                "ship_id": 4259264496,
+                "last_battle_time": 1631973806,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1631974438
+            },
+            {
+                "ship_id": 4183766480,
+                "last_battle_time": 1573275253,
+                "pvp_solo": {
+                    "capture_points": 103,
+                    "wins": 6,
+                    "losses": 6,
+                    "battles": 12,
+                    "max_damage_scouting": 39185,
+                    "team_capture_points": 1799,
+                    "frags": 14,
+                    "damage_scouting": 164690,
+                    "max_damage_dealt": 111778,
+                    "max_total_agro": 1602600
+                },
+                "updated_at": 1573276496
+            },
+            {
+                "ship_id": 3655251408,
+                "last_battle_time": 1667711868,
+                "pvp_solo": {
+                    "capture_points": 141,
+                    "wins": 5,
+                    "losses": 7,
+                    "battles": 12,
+                    "max_damage_scouting": 40769,
+                    "team_capture_points": 1319,
+                    "frags": 4,
+                    "damage_scouting": 120762,
+                    "max_damage_dealt": 138070,
+                    "max_total_agro": 1781800
+                },
+                "updated_at": 1667712676
+            },
+            {
+                "ship_id": 4293867216,
+                "last_battle_time": 1532607037,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 5,
+                    "losses": 2,
+                    "battles": 7,
+                    "max_damage_scouting": 26556,
+                    "team_capture_points": 480,
+                    "frags": 1,
+                    "damage_scouting": 57053,
+                    "max_damage_dealt": 39007,
+                    "max_total_agro": 1245305
+                },
+                "updated_at": 1532608117
+            },
+            {
+                "ship_id": 4182685520,
+                "last_battle_time": 1609377365,
+                "pvp_solo": {
+                    "capture_points": 237,
+                    "wins": 10,
+                    "losses": 9,
+                    "battles": 19,
+                    "max_damage_scouting": 33340,
+                    "team_capture_points": 1791,
+                    "frags": 13,
+                    "damage_scouting": 165947,
+                    "max_damage_dealt": 124893,
+                    "max_total_agro": 1353102
+                },
+                "updated_at": 1609377748
+            },
+            {
+                "ship_id": 4185798096,
+                "last_battle_time": 1616326660,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 3,
+                    "battles": 3,
+                    "max_damage_scouting": 15731,
+                    "team_capture_points": 0,
+                    "frags": 4,
+                    "damage_scouting": 22342,
+                    "max_damage_dealt": 57103,
+                    "max_total_agro": 381600
+                },
+                "updated_at": 1616327476
+            },
+            {
+                "ship_id": 3667867632,
+                "last_battle_time": 1690640237,
+                "pvp_solo": {
+                    "capture_points": 83,
+                    "wins": 1,
+                    "losses": 4,
+                    "battles": 5,
+                    "max_damage_scouting": 25363,
+                    "team_capture_points": 420,
+                    "frags": 5,
+                    "damage_scouting": 75203,
+                    "max_damage_dealt": 92848,
+                    "max_total_agro": 2044200
+                },
+                "updated_at": 1690640464
+            },
+            {
+                "ship_id": 4179507152,
+                "last_battle_time": 1739969248,
+                "pvp_solo": {
+                    "capture_points": 169,
+                    "wins": 2,
+                    "losses": 1,
+                    "battles": 3,
+                    "max_damage_scouting": 49633,
+                    "team_capture_points": 483,
+                    "frags": 0,
+                    "damage_scouting": 91730,
+                    "max_damage_dealt": 37231,
+                    "max_total_agro": 1230034
+                },
+                "updated_at": 1739970165
+            },
+            {
+                "ship_id": 4183766832,
+                "last_battle_time": 1571934455,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 4,
+                    "losses": 3,
+                    "battles": 7,
+                    "max_damage_scouting": 11662,
+                    "team_capture_points": 842,
+                    "frags": 5,
+                    "damage_scouting": 21781,
+                    "max_damage_dealt": 67398,
+                    "max_total_agro": 1137966
+                },
+                "updated_at": 1571935439
+            },
+            {
+                "ship_id": 4074649296,
+                "last_battle_time": 1665300783,
+                "pvp_solo": {
+                    "capture_points": 180,
+                    "wins": 4,
+                    "losses": 3,
+                    "battles": 7,
+                    "max_damage_scouting": 62496,
+                    "team_capture_points": 960,
+                    "frags": 3,
+                    "damage_scouting": 163521,
+                    "max_damage_dealt": 94896,
+                    "max_total_agro": 891587
+                },
+                "updated_at": 1665301456
+            },
+            {
+                "ship_id": 4183734096,
+                "last_battle_time": 1596032998,
+                "pvp_solo": {
+                    "capture_points": 8,
+                    "wins": 2,
+                    "losses": 1,
+                    "battles": 3,
+                    "max_damage_scouting": 28874,
+                    "team_capture_points": 540,
+                    "frags": 2,
+                    "damage_scouting": 68923,
+                    "max_damage_dealt": 57471,
+                    "max_total_agro": 858200
+                },
+                "updated_at": 1596033871
+            },
+            {
+                "ship_id": 4293834544,
+                "last_battle_time": 1531748129,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 1,
+                    "battles": 1,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 4,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 17823,
+                    "max_total_agro": 104500
+                },
+                "updated_at": 1531748685
+            },
+            {
+                "ship_id": 3764369200,
+                "last_battle_time": 1628329163,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 4,
+                    "losses": 4,
+                    "battles": 8,
+                    "max_damage_scouting": 115645,
+                    "team_capture_points": 840,
+                    "frags": 6,
+                    "damage_scouting": 426291,
+                    "max_damage_dealt": 66727,
+                    "max_total_agro": 733835
+                },
+                "updated_at": 1628329460
+            },
+            {
+                "ship_id": 4183733712,
+                "last_battle_time": 1567944774,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 1,
+                    "battles": 1,
+                    "max_damage_scouting": 14909,
+                    "team_capture_points": 180,
+                    "frags": 1,
+                    "damage_scouting": 14909,
+                    "max_damage_dealt": 75002,
+                    "max_total_agro": 899500
+                },
+                "updated_at": 1567945565
+            },
+            {
+                "ship_id": 4184815344,
+                "last_battle_time": 1618851006,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1618852207
+            },
+            {
+                "ship_id": 4290655952,
+                "last_battle_time": 1618039839,
+                "pvp_solo": {
+                    "capture_points": 60,
+                    "wins": 3,
+                    "losses": 2,
+                    "battles": 5,
+                    "max_damage_scouting": 33641,
+                    "team_capture_points": 179,
+                    "frags": 3,
+                    "damage_scouting": 56958,
+                    "max_damage_dealt": 29250,
+                    "max_total_agro": 711400
+                },
+                "updated_at": 1618040282
+            },
+            {
+                "ship_id": 4180588368,
+                "last_battle_time": 1672199054,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 2,
+                    "battles": 2,
+                    "max_damage_scouting": 26452,
+                    "team_capture_points": 120,
+                    "frags": 2,
+                    "damage_scouting": 34822,
+                    "max_damage_dealt": 95559,
+                    "max_total_agro": 1311150
+                },
+                "updated_at": 1672199363
+            },
+            {
+                "ship_id": 4184749904,
+                "last_battle_time": 1620746237,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 1,
+                    "losses": 0,
+                    "battles": 1,
+                    "max_damage_scouting": 16977,
+                    "team_capture_points": 60,
+                    "frags": 2,
+                    "damage_scouting": 16977,
+                    "max_damage_dealt": 2724,
+                    "max_total_agro": 355433
+                },
+                "updated_at": 1620747269
+            },
+            {
+                "ship_id": 4181669840,
+                "last_battle_time": 1575825348,
+                "pvp_solo": {
+                    "capture_points": 9,
+                    "wins": 5,
+                    "losses": 5,
+                    "battles": 10,
+                    "max_damage_scouting": 44058,
+                    "team_capture_points": 1080,
+                    "frags": 3,
+                    "damage_scouting": 141651,
+                    "max_damage_dealt": 74686,
+                    "max_total_agro": 1728650
+                },
+                "updated_at": 1575826185
+            },
+            {
+                "ship_id": 4292753104,
+                "last_battle_time": 1535211409,
+                "pvp_solo": {
+                    "capture_points": 63,
+                    "wins": 2,
+                    "losses": 1,
+                    "battles": 3,
+                    "max_damage_scouting": 5342,
+                    "team_capture_points": 301,
+                    "frags": 1,
+                    "damage_scouting": 6002,
+                    "max_damage_dealt": 8666,
+                    "max_total_agro": 375200
+                },
+                "updated_at": 1535211833
+            },
+            {
+                "ship_id": 4182652880,
+                "last_battle_time": 1580926385,
+                "pvp_solo": {
+                    "capture_points": 322,
+                    "wins": 7,
+                    "losses": 5,
+                    "battles": 12,
+                    "max_damage_scouting": 60974,
+                    "team_capture_points": 1140,
+                    "frags": 13,
+                    "damage_scouting": 197699,
+                    "max_damage_dealt": 109666,
+                    "max_total_agro": 569100
+                },
+                "updated_at": 1580927550
+            },
+            {
+                "ship_id": 4185830864,
+                "last_battle_time": 1544206376,
+                "pvp_solo": {
+                    "capture_points": 27,
+                    "wins": 1,
+                    "losses": 7,
+                    "battles": 8,
+                    "max_damage_scouting": 17081,
+                    "team_capture_points": 240,
+                    "frags": 3,
+                    "damage_scouting": 41913,
+                    "max_damage_dealt": 54164,
+                    "max_total_agro": 811001
+                },
+                "updated_at": 1544207130
+            },
+            {
+                "ship_id": 4279154384,
+                "last_battle_time": 1531971288,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 2,
+                    "losses": 0,
+                    "battles": 2,
+                    "max_damage_scouting": 13945,
+                    "team_capture_points": 360,
+                    "frags": 3,
+                    "damage_scouting": 19912,
+                    "max_damage_dealt": 46424,
+                    "max_total_agro": 243000
+                },
+                "updated_at": 1531971548
+            },
+            {
+                "ship_id": 4181604304,
+                "last_battle_time": 1672315002,
+                "pvp_solo": {
+                    "capture_points": 645,
+                    "wins": 3,
+                    "losses": 7,
+                    "battles": 10,
+                    "max_damage_scouting": 65663,
+                    "team_capture_points": 1265,
+                    "frags": 6,
+                    "damage_scouting": 302794,
+                    "max_damage_dealt": 90550,
+                    "max_total_agro": 1312003
+                },
+                "updated_at": 1672315313
+            },
+            {
+                "ship_id": 4280170480,
+                "last_battle_time": 1667636292,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1667636815
+            },
+            {
+                "ship_id": 4272895696,
+                "last_battle_time": 1544985654,
+                "pvp_solo": {
+                    "capture_points": 75,
+                    "wins": 22,
+                    "losses": 15,
+                    "battles": 37,
+                    "max_damage_scouting": 67222,
+                    "team_capture_points": 5224,
+                    "frags": 12,
+                    "damage_scouting": 665648,
+                    "max_damage_dealt": 113251,
+                    "max_total_agro": 3118500
+                },
+                "updated_at": 1544986467
+            },
+            {
+                "ship_id": 4286461936,
+                "last_battle_time": 1608815389,
+                "pvp_solo": {
+                    "capture_points": 367,
+                    "wins": 3,
+                    "losses": 4,
+                    "battles": 7,
+                    "max_damage_scouting": 69169,
+                    "team_capture_points": 661,
+                    "frags": 2,
+                    "damage_scouting": 169634,
+                    "max_damage_dealt": 88634,
+                    "max_total_agro": 552265
+                },
+                "updated_at": 1608815683
+            },
+            {
+                "ship_id": 4183734000,
+                "last_battle_time": 1609055168,
+                "pvp_solo": {
+                    "capture_points": 276,
+                    "wins": 13,
+                    "losses": 4,
+                    "battles": 17,
+                    "max_damage_scouting": 66146,
+                    "team_capture_points": 2100,
+                    "frags": 16,
+                    "damage_scouting": 207065,
+                    "max_damage_dealt": 93191,
+                    "max_total_agro": 884800
+                },
+                "updated_at": 1609055461
+            },
+            {
+                "ship_id": 4281219056,
+                "last_battle_time": 1736427495,
+                "pvp_solo": {
+                    "capture_points": 635,
+                    "wins": 6,
+                    "losses": 10,
+                    "battles": 16,
+                    "max_damage_scouting": 176830,
+                    "team_capture_points": 2228,
+                    "frags": 11,
+                    "damage_scouting": 669272,
+                    "max_damage_dealt": 113318,
+                    "max_total_agro": 1455100
+                },
+                "updated_at": 1736428329
+            },
+            {
+                "ship_id": 4183701296,
+                "last_battle_time": 1707910237,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 1,
+                    "battles": 1,
+                    "max_damage_scouting": 8343,
+                    "team_capture_points": 0,
+                    "frags": 3,
+                    "damage_scouting": 8343,
+                    "max_damage_dealt": 133694,
+                    "max_total_agro": 562053
+                },
+                "updated_at": 1707910929
+            },
+            {
+                "ship_id": 4074649424,
+                "last_battle_time": 1740060163,
+                "pvp_solo": {
+                    "capture_points": 120,
+                    "wins": 1,
+                    "losses": 2,
+                    "battles": 3,
+                    "max_damage_scouting": 26643,
+                    "team_capture_points": 240,
+                    "frags": 2,
+                    "damage_scouting": 41277,
+                    "max_damage_dealt": 76351,
+                    "max_total_agro": 583800
+                },
+                "updated_at": 1740061093
+            },
+            {
+                "ship_id": 4065212112,
+                "last_battle_time": 1739953664,
+                "pvp_solo": {
+                    "capture_points": 314,
+                    "wins": 5,
+                    "losses": 7,
+                    "battles": 12,
+                    "max_damage_scouting": 58437,
+                    "team_capture_points": 1322,
+                    "frags": 6,
+                    "damage_scouting": 213516,
+                    "max_damage_dealt": 104132,
+                    "max_total_agro": 1384300
+                },
+                "updated_at": 1739954530
+            },
+            {
+                "ship_id": 4182718256,
+                "last_battle_time": 1577194275,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 2,
+                    "losses": 5,
+                    "battles": 7,
+                    "max_damage_scouting": 15708,
+                    "team_capture_points": 180,
+                    "frags": 2,
+                    "damage_scouting": 63196,
+                    "max_damage_dealt": 49130,
+                    "max_total_agro": 1339900
+                },
+                "updated_at": 1577195294
+            },
+            {
+                "ship_id": 4182718416,
+                "last_battle_time": 1616328043,
+                "pvp_solo": {
+                    "capture_points": 27,
+                    "wins": 5,
+                    "losses": 6,
+                    "battles": 11,
+                    "max_damage_scouting": 30806,
+                    "team_capture_points": 1441,
+                    "frags": 10,
+                    "damage_scouting": 123458,
+                    "max_damage_dealt": 115490,
+                    "max_total_agro": 2033183
+                },
+                "updated_at": 1616329214
+            },
+            {
+                "ship_id": 3553572848,
+                "last_battle_time": 1609860279,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1609860826
+            },
+            {
+                "ship_id": 4179572688,
+                "last_battle_time": 1740673687,
+                "pvp_solo": {
+                    "capture_points": 68,
+                    "wins": 13,
+                    "losses": 17,
+                    "battles": 30,
+                    "max_damage_scouting": 56267,
+                    "team_capture_points": 3085,
+                    "frags": 20,
+                    "damage_scouting": 502148,
+                    "max_damage_dealt": 197338,
+                    "max_total_agro": 3441038
+                },
+                "updated_at": 1740674896
+            },
+            {
+                "ship_id": 4184749776,
+                "last_battle_time": 1616090328,
+                "pvp_solo": {
+                    "capture_points": 20,
+                    "wins": 0,
+                    "losses": 1,
+                    "battles": 1,
+                    "max_damage_scouting": 1452,
+                    "team_capture_points": 121,
+                    "frags": 0,
+                    "damage_scouting": 1452,
+                    "max_damage_dealt": 2277,
+                    "max_total_agro": 106500
+                },
+                "updated_at": 1616091297
+            },
+            {
+                "ship_id": 4181604176,
+                "last_battle_time": 1739367468,
+                "pvp_solo": {
+                    "capture_points": 25,
+                    "wins": 0,
+                    "losses": 1,
+                    "battles": 1,
+                    "max_damage_scouting": 13867,
+                    "team_capture_points": 121,
+                    "frags": 0,
+                    "damage_scouting": 13867,
+                    "max_damage_dealt": 11837,
+                    "max_total_agro": 347834
+                },
+                "updated_at": 1739368676
+            },
+            {
+                "ship_id": 4185863632,
+                "last_battle_time": 1570533629,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 2,
+                    "losses": 2,
+                    "battles": 4,
+                    "max_damage_scouting": 14247,
+                    "team_capture_points": 300,
+                    "frags": 2,
+                    "damage_scouting": 17118,
+                    "max_damage_dealt": 54214,
+                    "max_total_agro": 987202
+                },
+                "updated_at": 1570534371
+            },
+            {
+                "ship_id": 3751753552,
+                "last_battle_time": 1739711261,
+                "pvp_solo": {
+                    "capture_points": 101,
+                    "wins": 7,
+                    "losses": 9,
+                    "battles": 16,
+                    "max_damage_scouting": 54994,
+                    "team_capture_points": 2040,
+                    "frags": 15,
+                    "damage_scouting": 245771,
+                    "max_damage_dealt": 138627,
+                    "max_total_agro": 2458850
+                },
+                "updated_at": 1739712278
+            },
+            {
+                "ship_id": 4183734256,
+                "last_battle_time": 1564154386,
+                "pvp_solo": {
+                    "capture_points": 139,
+                    "wins": 11,
+                    "losses": 8,
+                    "battles": 19,
+                    "max_damage_scouting": 25276,
+                    "team_capture_points": 2101,
+                    "frags": 9,
+                    "damage_scouting": 137896,
+                    "max_damage_dealt": 60502,
+                    "max_total_agro": 1127034
+                },
+                "updated_at": 1564155600
+            },
+            {
+                "ship_id": 4179572560,
+                "last_battle_time": 1735986722,
+                "pvp_solo": {
+                    "capture_points": 6,
+                    "wins": 5,
+                    "losses": 4,
+                    "battles": 9,
+                    "max_damage_scouting": 44328,
+                    "team_capture_points": 962,
+                    "frags": 2,
+                    "damage_scouting": 167594,
+                    "max_damage_dealt": 135624,
+                    "max_total_agro": 2490253
+                },
+                "updated_at": 1735987673
+            },
+            {
+                "ship_id": 4293801680,
+                "last_battle_time": 1739115887,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1739116196
+            },
+            {
+                "ship_id": 3764303056,
+                "last_battle_time": 1620147503,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 1,
+                    "battles": 1,
+                    "max_damage_scouting": 21340,
+                    "team_capture_points": 0,
+                    "frags": 1,
+                    "damage_scouting": 21340,
+                    "max_damage_dealt": 52688,
+                    "max_total_agro": 1082750
+                },
+                "updated_at": 1620148575
+            },
+            {
+                "ship_id": 4181669328,
+                "last_battle_time": 1672314601,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 2,
+                    "losses": 2,
+                    "battles": 4,
+                    "max_damage_scouting": 32931,
+                    "team_capture_points": 240,
+                    "frags": 1,
+                    "damage_scouting": 51417,
+                    "max_damage_dealt": 100730,
+                    "max_total_agro": 1621250
+                },
+                "updated_at": 1672314903
+            },
+            {
+                "ship_id": 4186879440,
+                "last_battle_time": 1543730198,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 2,
+                    "losses": 1,
+                    "battles": 3,
+                    "max_damage_scouting": 5976,
+                    "team_capture_points": 240,
+                    "frags": 1,
+                    "damage_scouting": 14044,
+                    "max_damage_dealt": 13426,
+                    "max_total_agro": 422400
+                },
+                "updated_at": 1543731341
+            },
+            {
+                "ship_id": 4184782288,
+                "last_battle_time": 1562599968,
+                "pvp_solo": {
+                    "capture_points": 60,
+                    "wins": 4,
+                    "losses": 7,
+                    "battles": 11,
+                    "max_damage_scouting": 30412,
+                    "team_capture_points": 539,
+                    "frags": 7,
+                    "damage_scouting": 101750,
+                    "max_damage_dealt": 71143,
+                    "max_total_agro": 851900
+                },
+                "updated_at": 1562600736
+            },
+            {
+                "ship_id": 4182652112,
+                "last_battle_time": 1740319311,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1740320520
+            },
+            {
+                "ship_id": 4184815056,
+                "last_battle_time": 1571769259,
+                "pvp_solo": {
+                    "capture_points": 41,
+                    "wins": 3,
+                    "losses": 5,
+                    "battles": 8,
+                    "max_damage_scouting": 38619,
+                    "team_capture_points": 843,
+                    "frags": 4,
+                    "damage_scouting": 123183,
+                    "max_damage_dealt": 70902,
+                    "max_total_agro": 1094300
+                },
+                "updated_at": 1571770084
+            },
+            {
+                "ship_id": 4183701456,
+                "last_battle_time": 1567861720,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1567862403
+            },
+            {
+                "ship_id": 4185863984,
+                "last_battle_time": 1562942235,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 4,
+                    "losses": 0,
+                    "battles": 4,
+                    "max_damage_scouting": 12771,
+                    "team_capture_points": 420,
+                    "frags": 2,
+                    "damage_scouting": 24852,
+                    "max_damage_dealt": 56674,
+                    "max_total_agro": 822662
+                },
+                "updated_at": 1562943211
+            },
+            {
+                "ship_id": 3751687888,
+                "last_battle_time": 1665241126,
+                "pvp_solo": {
+                    "capture_points": 1784,
+                    "wins": 26,
+                    "losses": 21,
+                    "battles": 47,
+                    "max_damage_scouting": 138938,
+                    "team_capture_points": 6076,
+                    "frags": 48,
+                    "damage_scouting": 1781012,
+                    "max_damage_dealt": 160636,
+                    "max_total_agro": 969370
+                },
+                "updated_at": 1665242030
+            },
+            {
+                "ship_id": 4182652752,
+                "last_battle_time": 1696156291,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1696157054
+            },
+            {
+                "ship_id": 4258182864,
+                "last_battle_time": 1739113430,
+                "pvp_solo": {
+                    "capture_points": 60,
+                    "wins": 2,
+                    "losses": 6,
+                    "battles": 8,
+                    "max_damage_scouting": 12500,
+                    "team_capture_points": 480,
+                    "frags": 3,
+                    "damage_scouting": 21155,
+                    "max_damage_dealt": 20811,
+                    "max_total_agro": 668600
+                },
+                "updated_at": 1739113969
+            },
+            {
+                "ship_id": 4186912592,
+                "last_battle_time": 1536131902,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1536132632
+            },
+            {
+                "ship_id": 3659445712,
+                "last_battle_time": 1707576376,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1707577429
+            },
+            {
+                "ship_id": 4288591856,
+                "last_battle_time": 1672318859,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 4,
+                    "losses": 4,
+                    "battles": 8,
+                    "max_damage_scouting": 55155,
+                    "team_capture_points": 395,
+                    "frags": 5,
+                    "damage_scouting": 124844,
+                    "max_damage_dealt": 79557,
+                    "max_total_agro": 1339600
+                },
+                "updated_at": 1672319231
+            },
+            {
+                "ship_id": 4186879952,
+                "last_battle_time": 1566008124,
+                "pvp_solo": {
+                    "capture_points": 16,
+                    "wins": 1,
+                    "losses": 1,
+                    "battles": 2,
+                    "max_damage_scouting": 4411,
+                    "team_capture_points": 120,
+                    "frags": 2,
+                    "damage_scouting": 5776,
+                    "max_damage_dealt": 18502,
+                    "max_total_agro": 130998
+                },
+                "updated_at": 1566008704
+            },
+            {
+                "ship_id": 4181636944,
+                "last_battle_time": 1611756137,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 2,
+                    "losses": 6,
+                    "battles": 8,
+                    "max_damage_scouting": 48298,
+                    "team_capture_points": 365,
+                    "frags": 1,
+                    "damage_scouting": 157578,
+                    "max_damage_dealt": 72168,
+                    "max_total_agro": 2167364
+                },
+                "updated_at": 1611756766
+            },
+            {
+                "ship_id": 4273911792,
+                "last_battle_time": 1665236486,
+                "pvp_solo": {
+                    "capture_points": 214,
+                    "wins": 32,
+                    "losses": 30,
+                    "battles": 63,
+                    "max_damage_scouting": 46065,
+                    "team_capture_points": 7204,
+                    "frags": 27,
+                    "damage_scouting": 801581,
+                    "max_damage_dealt": 121869,
+                    "max_total_agro": 2574600
+                },
+                "updated_at": 1665237127
+            },
+            {
+                "ship_id": 4188977104,
+                "last_battle_time": 1562870490,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1562870922
+            },
+            {
+                "ship_id": 4187928016,
+                "last_battle_time": 1540413197,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 1,
+                    "losses": 1,
+                    "battles": 2,
+                    "max_damage_scouting": 8296,
+                    "team_capture_points": 180,
+                    "frags": 0,
+                    "damage_scouting": 9880,
+                    "max_damage_dealt": 8024,
+                    "max_total_agro": 163402
+                },
+                "updated_at": 1540413509
+            },
+            {
+                "ship_id": 4288624624,
+                "last_battle_time": 1617406453,
+                "pvp_solo": {
+                    "capture_points": 65,
+                    "wins": 4,
+                    "losses": 6,
+                    "battles": 10,
+                    "max_damage_scouting": 42428,
+                    "team_capture_points": 899,
+                    "frags": 13,
+                    "damage_scouting": 156810,
+                    "max_damage_dealt": 84606,
+                    "max_total_agro": 1645400
+                },
+                "updated_at": 1617407365
+            },
+            {
+                "ship_id": 4180620752,
+                "last_battle_time": 1672153355,
+                "pvp_solo": {
+                    "capture_points": 49,
+                    "wins": 6,
+                    "losses": 10,
+                    "battles": 16,
+                    "max_damage_scouting": 54280,
+                    "team_capture_points": 1626,
+                    "frags": 14,
+                    "damage_scouting": 379364,
+                    "max_damage_dealt": 137075,
+                    "max_total_agro": 2934652
+                },
+                "updated_at": 1672153626
+            },
+            {
+                "ship_id": 4291770064,
+                "last_battle_time": 1533397238,
+                "pvp_solo": {
+                    "capture_points": 233,
+                    "wins": 7,
+                    "losses": 9,
+                    "battles": 16,
+                    "max_damage_scouting": 23736,
+                    "team_capture_points": 1261,
+                    "frags": 10,
+                    "damage_scouting": 109104,
+                    "max_damage_dealt": 79722,
+                    "max_total_agro": 1262000
+                },
+                "updated_at": 1533397977
+            },
+            {
+                "ship_id": 4184815440,
+                "last_battle_time": 1565751486,
+                "pvp_solo": {
+                    "capture_points": 7,
+                    "wins": 5,
+                    "losses": 7,
+                    "battles": 12,
+                    "max_damage_scouting": 13493,
+                    "team_capture_points": 1077,
+                    "frags": 11,
+                    "damage_scouting": 68373,
+                    "max_damage_dealt": 86989,
+                    "max_total_agro": 1527200
+                },
+                "updated_at": 1565752560
+            },
+            {
+                "ship_id": 4269684432,
+                "last_battle_time": 1536132904,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1536133896
+            },
+            {
+                "ship_id": 4188976976,
+                "last_battle_time": 1535820549,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1535820905
+            },
+            {
+                "ship_id": 4179507024,
+                "last_battle_time": 1740057947,
+                "pvp_solo": {
+                    "capture_points": 141,
+                    "wins": 2,
+                    "losses": 0,
+                    "battles": 2,
+                    "max_damage_scouting": 15026,
+                    "team_capture_points": 363,
+                    "frags": 0,
+                    "damage_scouting": 16082,
+                    "max_damage_dealt": 26417,
+                    "max_total_agro": 559600
+                },
+                "updated_at": 1740058815
+            },
+            {
+                "ship_id": 4182652624,
+                "last_battle_time": 1672317977,
+                "pvp_solo": {
+                    "capture_points": 60,
+                    "wins": 1,
+                    "losses": 3,
+                    "battles": 4,
+                    "max_damage_scouting": 14778,
+                    "team_capture_points": 480,
+                    "frags": 1,
+                    "damage_scouting": 25165,
+                    "max_damage_dealt": 12374,
+                    "max_total_agro": 703000
+                },
+                "updated_at": 1735919435
+            },
+            {
+                "ship_id": 4186912560,
+                "last_battle_time": 1562873439,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1562874198
+            },
+            {
+                "ship_id": 4292785616,
+                "last_battle_time": 1543049988,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 1,
+                    "battles": 1,
+                    "max_damage_scouting": 3161,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 3161,
+                    "max_damage_dealt": 4456,
+                    "max_total_agro": 20800
+                },
+                "updated_at": 1543050329
+            },
+            {
+                "ship_id": 4184815568,
+                "last_battle_time": 1567194252,
+                "pvp_solo": {
+                    "capture_points": 38,
+                    "wins": 4,
+                    "losses": 3,
+                    "battles": 7,
+                    "max_damage_scouting": 95200,
+                    "team_capture_points": 481,
+                    "frags": 3,
+                    "damage_scouting": 201008,
+                    "max_damage_dealt": 62687,
+                    "max_total_agro": 2019918
+                },
+                "updated_at": 1567195430
+            },
+            {
+                "ship_id": 4181604048,
+                "last_battle_time": 1734580545,
+                "pvp_solo": {
+                    "capture_points": 364,
+                    "wins": 5,
+                    "losses": 7,
+                    "battles": 12,
+                    "max_damage_scouting": 62333,
+                    "team_capture_points": 1259,
+                    "frags": 5,
+                    "damage_scouting": 350691,
+                    "max_damage_dealt": 84037,
+                    "max_total_agro": 1137667
+                },
+                "updated_at": 1735918755
+            },
+            {
+                "ship_id": 4185831216,
+                "last_battle_time": 1531923241,
+                "pvp_solo": {
+                    "capture_points": 325,
+                    "wins": 18,
+                    "losses": 21,
+                    "battles": 39,
+                    "max_damage_scouting": 27427,
+                    "team_capture_points": 3724,
+                    "frags": 18,
+                    "damage_scouting": 237982,
+                    "max_damage_dealt": 47677,
+                    "max_total_agro": 1321000
+                },
+                "updated_at": 1531924238
+            },
+            {
+                "ship_id": 4184749360,
+                "last_battle_time": 1618701194,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 2,
+                    "battles": 2,
+                    "max_damage_scouting": 23220,
+                    "team_capture_points": 0,
+                    "frags": 3,
+                    "damage_scouting": 41722,
+                    "max_damage_dealt": 20568,
+                    "max_total_agro": 788282
+                },
+                "updated_at": 1618702167
+            },
+            {
+                "ship_id": 4184782640,
+                "last_battle_time": 1532168561,
+                "pvp_solo": {
+                    "capture_points": 251,
+                    "wins": 16,
+                    "losses": 5,
+                    "battles": 21,
+                    "max_damage_scouting": 38410,
+                    "team_capture_points": 2519,
+                    "frags": 4,
+                    "damage_scouting": 214148,
+                    "max_damage_dealt": 56977,
+                    "max_total_agro": 707400
+                },
+                "updated_at": 1532169390
+            },
+            {
+                "ship_id": 4079891760,
+                "last_battle_time": 1690464868,
+                "pvp_solo": {
+                    "capture_points": 121,
+                    "wins": 2,
+                    "losses": 0,
+                    "battles": 2,
+                    "max_damage_scouting": 26143,
+                    "team_capture_points": 362,
+                    "frags": 2,
+                    "damage_scouting": 26143,
+                    "max_damage_dealt": 44870,
+                    "max_total_agro": 357466
+                },
+                "updated_at": 1690466070
+            },
+            {
+                "ship_id": 4179572176,
+                "last_battle_time": 1631953383,
+                "pvp_solo": {
+                    "capture_points": 132,
+                    "wins": 2,
+                    "losses": 4,
+                    "battles": 6,
+                    "max_damage_scouting": 31044,
+                    "team_capture_points": 781,
+                    "frags": 3,
+                    "damage_scouting": 85696,
+                    "max_damage_dealt": 146473,
+                    "max_total_agro": 2122051
+                },
+                "updated_at": 1735929928
+            },
+            {
+                "ship_id": 4289640432,
+                "last_battle_time": 1539967824,
+                "pvp_solo": {
+                    "capture_points": 36,
+                    "wins": 5,
+                    "losses": 3,
+                    "battles": 8,
+                    "max_damage_scouting": 17983,
+                    "team_capture_points": 840,
+                    "frags": 0,
+                    "damage_scouting": 57728,
+                    "max_damage_dealt": 39792,
+                    "max_total_agro": 775134
+                },
+                "updated_at": 1539968545
+            },
+            {
+                "ship_id": 4184749872,
+                "last_battle_time": 1707582028,
+                "pvp_solo": {
+                    "capture_points": 71,
+                    "wins": 1,
+                    "losses": 0,
+                    "battles": 1,
+                    "max_damage_scouting": 2221,
+                    "team_capture_points": 242,
+                    "frags": 4,
+                    "damage_scouting": 2221,
+                    "max_damage_dealt": 43113,
+                    "max_total_agro": 193966
+                },
+                "updated_at": 1707582783
+            },
+            {
+                "ship_id": 4179539760,
+                "last_battle_time": 1740061219,
+                "pvp_solo": {
+                    "capture_points": 62,
+                    "wins": 17,
+                    "losses": 25,
+                    "battles": 42,
+                    "max_damage_scouting": 66267,
+                    "team_capture_points": 4676,
+                    "frags": 20,
+                    "damage_scouting": 911674,
+                    "max_damage_dealt": 231329,
+                    "max_total_agro": 2473400
+                },
+                "updated_at": 1740062060
+            },
+            {
+                "ship_id": 3761190608,
+                "last_battle_time": 1739279505,
+                "pvp_solo": {
+                    "capture_points": 256,
+                    "wins": 60,
+                    "losses": 64,
+                    "battles": 124,
+                    "max_damage_scouting": 82828,
+                    "team_capture_points": 14196,
+                    "frags": 100,
+                    "damage_scouting": 2474403,
+                    "max_damage_dealt": 264403,
+                    "max_total_agro": 3223034
+                },
+                "updated_at": 1739280433
+            },
+            {
+                "ship_id": 4180588336,
+                "last_battle_time": 1591533598,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 8,
+                    "losses": 14,
+                    "battles": 22,
+                    "max_damage_scouting": 56203,
+                    "team_capture_points": 2461,
+                    "frags": 10,
+                    "damage_scouting": 429873,
+                    "max_damage_dealt": 123826,
+                    "max_total_agro": 2202600
+                },
+                "updated_at": 1591534799
+            },
+            {
+                "ship_id": 4290721776,
+                "last_battle_time": 1609994976,
+                "pvp_solo": {
+                    "capture_points": 60,
+                    "wins": 2,
+                    "losses": 1,
+                    "battles": 3,
+                    "max_damage_scouting": 3647,
+                    "team_capture_points": 120,
+                    "frags": 11,
+                    "damage_scouting": 3647,
+                    "max_damage_dealt": 152390,
+                    "max_total_agro": 1049566
+                },
+                "updated_at": 1609996118
+            },
+            {
+                "ship_id": 4181637104,
+                "last_battle_time": 1672204872,
+                "pvp_solo": {
+                    "capture_points": 172,
+                    "wins": 24,
+                    "losses": 18,
+                    "battles": 42,
+                    "max_damage_scouting": 34614,
+                    "team_capture_points": 4979,
+                    "frags": 20,
+                    "damage_scouting": 512261,
+                    "max_damage_dealt": 103154,
+                    "max_total_agro": 1415200
+                },
+                "updated_at": 1672205341
+            },
+            {
+                "ship_id": 3760142160,
+                "last_battle_time": 1739952716,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 1,
+                    "losses": 1,
+                    "battles": 2,
+                    "max_damage_scouting": 3150,
+                    "team_capture_points": 181,
+                    "frags": 1,
+                    "damage_scouting": 3150,
+                    "max_damage_dealt": 55456,
+                    "max_total_agro": 1996900
+                },
+                "updated_at": 1739953431
+            },
+            {
+                "ship_id": 4186912208,
+                "last_battle_time": 1570294469,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 3,
+                    "losses": 0,
+                    "battles": 3,
+                    "max_damage_scouting": 9001,
+                    "team_capture_points": 120,
+                    "frags": 5,
+                    "damage_scouting": 9001,
+                    "max_damage_dealt": 76662,
+                    "max_total_agro": 815400
+                },
+                "updated_at": 1570295275
+            },
+            {
+                "ship_id": 4075697872,
+                "last_battle_time": 1672152270,
+                "pvp_solo": {
+                    "capture_points": 3,
+                    "wins": 0,
+                    "losses": 3,
+                    "battles": 3,
+                    "max_damage_scouting": 2822,
+                    "team_capture_points": 195,
+                    "frags": 0,
+                    "damage_scouting": 2822,
+                    "max_damage_dealt": 12116,
+                    "max_total_agro": 387164
+                },
+                "updated_at": 1672152532
+            },
+            {
+                "ship_id": 4183734032,
+                "last_battle_time": 1706961841,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1706962728
+            },
+            {
+                "ship_id": 4288624336,
+                "last_battle_time": 1576566631,
+                "pvp_solo": {
+                    "capture_points": 82,
+                    "wins": 14,
+                    "losses": 15,
+                    "battles": 29,
+                    "max_damage_scouting": 46526,
+                    "team_capture_points": 3064,
+                    "frags": 24,
+                    "damage_scouting": 262928,
+                    "max_damage_dealt": 135932,
+                    "max_total_agro": 2149400
+                },
+                "updated_at": 1576567283
+            },
+            {
+                "ship_id": 4182717904,
+                "last_battle_time": 1672384752,
+                "pvp_solo": {
+                    "capture_points": 12,
+                    "wins": 8,
+                    "losses": 2,
+                    "battles": 10,
+                    "max_damage_scouting": 44564,
+                    "team_capture_points": 1023,
+                    "frags": 10,
+                    "damage_scouting": 237506,
+                    "max_damage_dealt": 80366,
+                    "max_total_agro": 2183900
+                },
+                "updated_at": 1672385098
+            },
+            {
+                "ship_id": 4293867504,
+                "last_battle_time": 1607001235,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1607002436
+            },
+            {
+                "ship_id": 4078843600,
+                "last_battle_time": 1618040419,
+                "pvp_solo": {
+                    "capture_points": 531,
+                    "wins": 8,
+                    "losses": 4,
+                    "battles": 12,
+                    "max_damage_scouting": 37256,
+                    "team_capture_points": 1580,
+                    "frags": 11,
+                    "damage_scouting": 126717,
+                    "max_damage_dealt": 44081,
+                    "max_total_agro": 996800
+                },
+                "updated_at": 1618041031
+            },
+            {
+                "ship_id": 4187894992,
+                "last_battle_time": 1697265724,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1697266117
+            },
+            {
+                "ship_id": 4182685680,
+                "last_battle_time": 1576564747,
+                "pvp_solo": {
+                    "capture_points": 309,
+                    "wins": 19,
+                    "losses": 16,
+                    "battles": 35,
+                    "max_damage_scouting": 33581,
+                    "team_capture_points": 3419,
+                    "frags": 19,
+                    "damage_scouting": 272532,
+                    "max_damage_dealt": 94460,
+                    "max_total_agro": 1441134
+                },
+                "updated_at": 1576565082
+            },
+            {
+                "ship_id": 4187928400,
+                "last_battle_time": 1536039549,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1536040251
+            },
+            {
+                "ship_id": 4182685424,
+                "last_battle_time": 1616245026,
+                "pvp_solo": {
+                    "capture_points": 76,
+                    "wins": 3,
+                    "losses": 6,
+                    "battles": 9,
+                    "max_damage_scouting": 15607,
+                    "team_capture_points": 600,
+                    "frags": 5,
+                    "damage_scouting": 46553,
+                    "max_damage_dealt": 69594,
+                    "max_total_agro": 1010600
+                },
+                "updated_at": 1616246099
+            },
+            {
+                "ship_id": 4256085712,
+                "last_battle_time": 1531813218,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 3,
+                    "battles": 3,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 3,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 11702,
+                    "max_total_agro": 123300
+                },
+                "updated_at": 1531813662
+            },
+            {
+                "ship_id": 4183700784,
+                "last_battle_time": 1618849413,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1618850290
+            },
+            {
+                "ship_id": 4076746448,
+                "last_battle_time": 1672316337,
+                "pvp_solo": {
+                    "capture_points": 1160,
+                    "wins": 6,
+                    "losses": 10,
+                    "battles": 16,
+                    "max_damage_scouting": 59253,
+                    "team_capture_points": 2100,
+                    "frags": 6,
+                    "damage_scouting": 402382,
+                    "max_damage_dealt": 71267,
+                    "max_total_agro": 862403
+                },
+                "updated_at": 1735926934
+            },
+            {
+                "ship_id": 4282333168,
+                "last_battle_time": 1736257761,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1736258216
+            },
+            {
+                "ship_id": 3762239472,
+                "last_battle_time": 1672312337,
+                "pvp_solo": {
+                    "capture_points": 380,
+                    "wins": 27,
+                    "losses": 30,
+                    "battles": 58,
+                    "max_damage_scouting": 74548,
+                    "team_capture_points": 7934,
+                    "frags": 38,
+                    "damage_scouting": 1022653,
+                    "max_damage_dealt": 133169,
+                    "max_total_agro": 2497050
+                },
+                "updated_at": 1672312629
+            },
+            {
+                "ship_id": 4290689008,
+                "last_battle_time": 1531698920,
+                "pvp_solo": {
+                    "capture_points": 30,
+                    "wins": 4,
+                    "losses": 7,
+                    "battles": 11,
+                    "max_damage_scouting": 6113,
+                    "team_capture_points": 239,
+                    "frags": 5,
+                    "damage_scouting": 20295,
+                    "max_damage_dealt": 35357,
+                    "max_total_agro": 479100
+                },
+                "updated_at": 1531699918
+            },
+            {
+                "ship_id": 4186879792,
+                "last_battle_time": 1531800028,
+                "pvp_solo": {
+                    "capture_points": 32,
+                    "wins": 4,
+                    "losses": 7,
+                    "battles": 11,
+                    "max_damage_scouting": 11243,
+                    "team_capture_points": 479,
+                    "frags": 11,
+                    "damage_scouting": 28591,
+                    "max_damage_dealt": 58242,
+                    "max_total_agro": 734600
+                },
+                "updated_at": 1531800589
+            },
+            {
+                "ship_id": 3552523984,
+                "last_battle_time": 1617555542,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1617556196
+            },
+            {
+                "ship_id": 4185864016,
+                "last_battle_time": 1537634153,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1537634722
+            },
+            {
+                "ship_id": 3550394128,
+                "last_battle_time": 1736597888,
+                "pvp_solo": {
+                    "capture_points": 60,
+                    "wins": 4,
+                    "losses": 4,
+                    "battles": 8,
+                    "max_damage_scouting": 53411,
+                    "team_capture_points": 965,
+                    "frags": 1,
+                    "damage_scouting": 182529,
+                    "max_damage_dealt": 106484,
+                    "max_total_agro": 2873300
+                },
+                "updated_at": 1736598458
+            },
+            {
+                "ship_id": 4288559088,
+                "last_battle_time": 1672318534,
+                "pvp_solo": {
+                    "capture_points": 204,
+                    "wins": 2,
+                    "losses": 3,
+                    "battles": 5,
+                    "max_damage_scouting": 32135,
+                    "team_capture_points": 480,
+                    "frags": 3,
+                    "damage_scouting": 51321,
+                    "max_damage_dealt": 49943,
+                    "max_total_agro": 498600
+                },
+                "updated_at": 1672319069
+            },
+            {
+                "ship_id": 4269717488,
+                "last_battle_time": 1532057442,
+                "pvp_solo": {
+                    "capture_points": 140,
+                    "wins": 6,
+                    "losses": 13,
+                    "battles": 19,
+                    "max_damage_scouting": 19237,
+                    "team_capture_points": 841,
+                    "frags": 29,
+                    "damage_scouting": 61139,
+                    "max_damage_dealt": 83483,
+                    "max_total_agro": 603400
+                },
+                "updated_at": 1532058104
+            },
+            {
+                "ship_id": 4186879824,
+                "last_battle_time": 1536043584,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1536044516
+            },
+            {
+                "ship_id": 3760109008,
+                "last_battle_time": 1690448502,
+                "pvp_solo": {
+                    "capture_points": 54,
+                    "wins": 5,
+                    "losses": 7,
+                    "battles": 12,
+                    "max_damage_scouting": 62780,
+                    "team_capture_points": 1581,
+                    "frags": 5,
+                    "damage_scouting": 242884,
+                    "max_damage_dealt": 139754,
+                    "max_total_agro": 2276000
+                },
+                "updated_at": 1690449345
+            },
+            {
+                "ship_id": 4184782576,
+                "last_battle_time": 1609540587,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 2,
+                    "losses": 1,
+                    "battles": 3,
+                    "max_damage_scouting": 28152,
+                    "team_capture_points": 360,
+                    "frags": 0,
+                    "damage_scouting": 54159,
+                    "max_damage_dealt": 46649,
+                    "max_total_agro": 841100
+                },
+                "updated_at": 1609541175
+            },
+            {
+                "ship_id": 4078843344,
+                "last_battle_time": 1707578192,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1707579095
+            },
+            {
+                "ship_id": 4181636560,
+                "last_battle_time": 1672312686,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "battles": 0,
+                    "max_damage_scouting": 0,
+                    "team_capture_points": 0,
+                    "frags": 0,
+                    "damage_scouting": 0,
+                    "max_damage_dealt": 0,
+                    "max_total_agro": 0
+                },
+                "updated_at": 1672312970
+            },
+            {
+                "ship_id": 4181702352,
+                "last_battle_time": 1672204409,
+                "pvp_solo": {
+                    "capture_points": 0,
+                    "wins": 3,
+                    "losses": 1,
+                    "battles": 4,
+                    "max_damage_scouting": 113443,
+                    "team_capture_points": 480,
+                    "frags": 6,
+                    "damage_scouting": 236691,
+                    "max_damage_dealt": 61031,
+                    "max_total_agro": 281700
+                },
+                "updated_at": 1672204680
+            }
+        ]
+    }
+}
