@@ -34,6 +34,10 @@ dependencies {
     //implementation 'mysql:mysql-connector-java'
 
     implementation 'org.springframework.boot:spring-boot-starter-web:3.4.3'
+
+    implementation 'org.springframework.boot:spring-boot-starter-cache:3.4.3'// 스프링 application 내부 캐시
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis:3.4.3'// redis
+    implementation 'com.github.ben-manes.caffeine:caffeine:3.2.0'
 }
 
 tasks.named('test') {

@@ -7,9 +7,9 @@ import jakarta.persistence.Id;
 public class RatingHistoryEntity extends BaseTimeEntity {
 
     @Id
-    private Long id;
+    private Long seq;
 
-    private String nickname;
+    private String id;
 
     private int ratingScore;
 
