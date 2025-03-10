@@ -19,9 +19,17 @@ public class RatingStatsService {
     @Cacheable(value = "rating", key = "#nickname")
     public RatingDto getRating(String nickname){
 
+        /**
+         * 1. 유저 존재여부 검증
+         * */
+
         userAccountService.regist(UserAccount.builder()
-                                    .nickname(nickname)
-                                    .build());
+                .nickname(nickname)
+                .build());
+
+        /**
+         * 2. 유저 레이팅 리턴
+         * */
 
 
         return null;
