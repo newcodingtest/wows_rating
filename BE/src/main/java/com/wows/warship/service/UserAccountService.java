@@ -1,15 +1,11 @@
 package com.wows.warship.service;
 
-import com.wows.warship.client.feign.UserAccountClient;
 import com.wows.warship.dto.UserAccount;
 import com.wows.warship.entity.UserAccountEntity;
 import com.wows.warship.repository.UserAccountRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
-import java.util.Map;
-import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @RequiredArgsConstructor

@@ -1,6 +1,17 @@
+
 spring:
   application:
     name: warship
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    defer-datasource-initialization: true
+
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:shipinfo.sql
 
   datasource:
     url: jdbc:h2:mem:db
@@ -18,3 +29,5 @@ spring:
 #    redis:
 #      host: localhost
 #      port: 6379
+server:
+  port: 8081

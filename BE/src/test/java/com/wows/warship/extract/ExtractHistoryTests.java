@@ -8,7 +8,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.*;
-import java.sql.Timestamp;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -152,12 +151,4 @@ public class ExtractHistoryTests {
         long diffDays = TimeUnit.SECONDS.toDays(diffTime);
         System.out.println(diffDays+"일전 데이터");
     }
-    public void diffTimeHour(long passTime){
-        long nowTime = Instant.now().getEpochSecond();
-        long diffTime = nowTime-passTime;
-
-        long diffDays = TimeUnit.SECONDS.toHours(diffTime);
-        System.out.println(diffDays+"시간전 데이터");
-    }
-
 }

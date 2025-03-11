@@ -7,6 +7,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+/**
+ * 레이팅 서비스
+ * */
 @RequiredArgsConstructor
 @Service
 public class RatingStatsService {
@@ -33,6 +36,10 @@ public class RatingStatsService {
 
 
         return null;
+    }
+
+    private void calculate(){
+
     }
 
 }
