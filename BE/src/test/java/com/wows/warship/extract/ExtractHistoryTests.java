@@ -33,6 +33,7 @@ public class ExtractHistoryTests {
         expectedData = expected;
     }
 
+    @DisplayName("유저 레이팅 계산식")
     @Test
     public void 레이팅_계산하기() throws IOException {
         InputStream is1 = new FileInputStream("src/sample/history/pvp_solo/0305/1114.json");

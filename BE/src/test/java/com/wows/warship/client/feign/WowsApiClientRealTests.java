@@ -1,25 +1,22 @@
 package com.wows.warship.client.feign;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.wows.warship.entity.ShipInfoEntity;
-import com.wows.warship.repository.ShipInfoRepository;
+import com.wows.warship.extract.ShipDataDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -34,9 +31,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class WowsApiClientRealTests {
 
     @Autowired
-    private WowsApiClient userAccountService;
+    private WowsApiClient wowsApiClient;
     @Autowired
-    private ShipInfoRepository shipInfoRepository;
+    private ObjectMapper objectMapper;
 
     @DisplayName("실제 API Test: 닉네임이 존재하는지 확인 할 수 있다.")
     @Test
@@ -45,7 +42,7 @@ public class WowsApiClientRealTests {
         String startWithNickname = "nocap";
 
         //when
-        Map<String, Object>  response = userAccountService.getAccountList("4a5f774ca91614ec9e42bdb76474af15",
+        Map<String, Object>  response = wowsApiClient.getAccountList("4a5f774ca91614ec9e42bdb76474af15",
                 startWithNickname);
 
         ArrayList<Map<String, String>>actual = (ArrayList)response.get("data");
@@ -60,7 +57,7 @@ public class WowsApiClientRealTests {
         String shipId = "4179506480";
 
         //when
-        Map<String, Object>  response = userAccountService.getShipInfo("4a5f774ca91614ec9e42bdb76474af15",
+        Map<String, Object>  response = wowsApiClient.getShipInfo("4a5f774ca91614ec9e42bdb76474af15",
                 "en",
                 shipId);
 
@@ -71,6 +68,7 @@ public class WowsApiClientRealTests {
     }
 
 
+    @DisplayName("[배 ID:배 이름] 매핑 테스트")
     @Test
     public void collectShipList() throws IOException {
         InputStream is = new FileInputStream("src/sample/expected/test.json");
@@ -83,7 +81,7 @@ public class WowsApiClientRealTests {
         System.out.println("INSERT INTO SHIP_INFO_ENTITY (SHIP_ID, SHIP_NAME, AVERAGE_DMG, AVERAGE_KILL, AVERAGE_WIN_RATE) VALUES");
         for (Map.Entry entry : mockResponse.entrySet()){
             String shipId = entry.getKey().toString();
-            Map<String, Object>  response = userAccountService.getShipInfo("4a5f774ca91614ec9e42bdb76474af15",
+            Map<String, Object>  response = wowsApiClient.getShipInfo("4a5f774ca91614ec9e42bdb76474af15",
                     "en",
                     shipId);
 
@@ -100,4 +98,30 @@ public class WowsApiClientRealTests {
             System.out.println("("+shipId+", '"+shipName+"',"+averageDmg+","+averageKill+","+averageWin+"),");
         }
     }
+
+
+    @DisplayName("유저 전적 히스토리를 가져올 수 있다.")
+    @Test
+    public void should_be_battle_history() throws JsonProcessingException {
+        //given
+        String applicationId = "4a5f774ca91614ec9e42bdb76474af15";
+        String userId = "2020639284";
+
+        //when
+        Map<String, Object> expected = wowsApiClient.getBattleHistory(applicationId, userId, "en");
+        caculate(expected);
+        //then
+    }
+
+    private void caculate(Map<String, Object> history) throws JsonProcessingException {
+        JsonNode jsonNode = objectMapper.valueToTree(history);
+        List<ShipDataDto> dtos = objectMapper.readValue(jsonNode.get("data").get("2020639284").toString(),
+                new TypeReference<List<ShipDataDto>>() {
+                });
+
+        for (ShipDataDto dto : dtos){
+            System.out.println(dto);
+        }
+    }
+
 }

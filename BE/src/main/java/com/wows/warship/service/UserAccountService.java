@@ -1,46 +1,70 @@
 package com.wows.warship.service;
 
+import com.wows.warship.client.feign.WowsApiClient;
 import com.wows.warship.dto.UserAccount;
 import com.wows.warship.entity.UserAccountEntity;
+import com.wows.warship.exception.WowsErrorCode;
+import com.wows.warship.exception.WowsException;
 import com.wows.warship.repository.UserAccountRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
 public class UserAccountService {
 
+    @Value("${wows.api.key}")
+    private String apiKey;
+
+    private final WowsApiClient wowsApiClient;
+
     private final UserAccountRepository userAccountRepository;
 
-    public void regist(UserAccount userAccount){
-        isUserInDb(userAccount.getNickname());
-        isUserExist(userAccount.getNickname());
+    public UserAccount getRate(String nickname){
+        return userAccountRepository
+                .findByNickname(nickname).get().toModel();
+    }
 
-        /**
-         * 1.실제 계정이 존재하는지 db로 확인         *
-         *  1-1. db에 존재하지 않았을때 api로 확인
-         *   1-1-1. api에 존재한다면 db 저장
-         *
-         * */
-        Optional<UserAccountEntity> user = userAccountRepository.findByNickname(userAccount.getNickname());
-        if (user.isEmpty()){
-            userAccountRepository.save(UserAccountEntity.from(userAccount));
+    public UserAccount isUserExist(String nickname){
+        Optional<UserAccount> find = isUserExistInDb(nickname);
+
+        if(find.isEmpty()){
+           return isUserExistInApi(nickname);
         }
+        return find.get();
     }
 
-    private void isUserExist(String nickname) {
+    private UserAccount isUserExistInApi(String nickname) {
+        Map<String, Object> response = wowsApiClient.getAccountList(apiKey, nickname);
+
+        ArrayList<Map<String, String>> actual = (ArrayList)response.get("data");
+
+        for (Map<String, String> names : actual){
+            String name = names.get("nickname");
+            if (name.equals(nickname)){
+                String id = String.valueOf(names.get("account_id"));
+                UserAccount userAccount = UserAccount.builder()
+                        .nickname(nickname)
+                        .id(Long.parseLong(id))
+                        .build();
+                userAccountRepository.save(UserAccountEntity.from(userAccount));
+                return userAccount;
+            }
+        }
+        throw new WowsException.NotFoundUserException(WowsErrorCode.NOT_FOUNT_USER, nickname);
     }
 
-    private boolean isUserInDb(String nickname){
+    private Optional<UserAccount> isUserExistInDb(String nickname){
         Optional<UserAccountEntity> user = userAccountRepository.findByNickname(nickname);
         if (user.isEmpty()){
-            return false;
+            return Optional.empty();
         }
-        return true;
+        return Optional.of(user.get().toModel());
     }
-
-
-
 }

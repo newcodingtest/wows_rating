@@ -9,7 +9,7 @@ public class RatingHistoryEntity extends BaseTimeEntity {
     @Id
     private Long seq;
 
-    private String id;
+    private String nickname;
 
     private int ratingScore;
 

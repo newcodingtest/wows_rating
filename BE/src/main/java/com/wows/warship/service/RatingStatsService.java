@@ -2,7 +2,7 @@ package com.wows.warship.service;
 
 import com.wows.warship.dto.RatingDto;
 import com.wows.warship.dto.UserAccount;
-import com.wows.warship.repository.WowsRepository;
+import com.wows.warship.repository.RatingHistoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -14,31 +14,34 @@ import org.springframework.stereotype.Service;
 @Service
 public class RatingStatsService {
 
-    private final WowsRepository wowsRepository;
+    private final RatingHistoryRepository ratingHistoryRepository;
 
     private final UserAccountService userAccountService;
 
 
+    /**
+     * DB에 있는 유저 레이팅을 가져온다.
+     * */
     @Cacheable(value = "rating", key = "#nickname")
     public RatingDto getRating(String nickname){
+        UserAccount find = userAccountService.getRate(nickname);
 
-        /**
-         * 1. 유저 존재여부 검증
-         * */
-
-        userAccountService.regist(UserAccount.builder()
-                .nickname(nickname)
-                .build());
-
-        /**
-         * 2. 유저 레이팅 리턴
-         * */
-
-
-        return null;
+        return RatingDto.builder()
+                .nickname(find.getNickname())
+                .ratingScore(find.getRatingScore())
+                .wins(find.getWins())
+                .build();
     }
 
-    private void calculate(){
+    /**
+     * 유저 레이팅 새로 갱신
+     * */
+    private void updateRating(Long userId){
+
+    }
+
+
+    private void calculate(Long userId){
 
     }
 

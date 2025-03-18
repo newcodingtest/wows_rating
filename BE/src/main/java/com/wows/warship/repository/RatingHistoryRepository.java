@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface WowsRepository extends JpaRepository<RatingHistoryEntity, Long> {
+public interface RatingHistoryRepository extends JpaRepository<RatingHistoryEntity, Long> {
 }

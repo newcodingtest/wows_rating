@@ -19,7 +19,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest
-public class AccountCheckServiceTests {
+public class WowsApiServiceTests {
 
     @Mock
     private WowsApiClient wowsApiClient;
@@ -27,9 +27,10 @@ public class AccountCheckServiceTests {
     @InjectMocks
     private WowsApiService testService;
 
-    @DisplayName("닉네임이 존재하는지 확인 할 수 있다.")
+    @DisplayName("샘플 테스트: 닉네임이 존재하는지 확인 할 수 있다.")
     @Test
-    public void should_be_return_response() throws IOException {
+    public void sampleTest() throws IOException {
+        //given
         InputStream is = new FileInputStream("src/sample/account/account-list.json");
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode jnode = objectMapper.readTree(is);
@@ -39,17 +40,16 @@ public class AccountCheckServiceTests {
                 new TypeReference< Map<String, Object> >() {
                 });
 
-        //given
         String nickname = "noCap";
-        Mockito.when(testService.getUserAccountInfo(nickname))
-                .thenReturn(mockResponse);
 
         //when
+        Mockito.when(testService.getUserAccountInfo(nickname))
+                .thenReturn(mockResponse);
         Map<String, Object> response = testService.getUserAccountInfo(nickname);
 
         ArrayList<Map<String, String>>actual = (ArrayList)response.get("data");
+
         //then
         assertEquals("noCap_noSpot_noHelp_Fxxk", actual.get(4).get("nickname"));
     }
-
 }

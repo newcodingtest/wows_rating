@@ -25,9 +25,14 @@ spring:
       path: /h2-console
       settings:
         web-allow-others: true
-#  data:
-#    redis:
-#      host: localhost
-#      port: 6379
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
 server:
   port: 8081
+
+wows:
+  api:
+    key: 4a5f774ca91614ec9e42bdb76474af15
