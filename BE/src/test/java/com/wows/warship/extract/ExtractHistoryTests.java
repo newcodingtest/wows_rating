@@ -33,10 +33,74 @@ public class ExtractHistoryTests {
         expectedData = expected;
     }
 
+    @DisplayName("솔로 레이팅 계산식")
+    @Test
+    public void 솔로_계산하기() throws IOException {
+        InputStream is1 = new FileInputStream("src/sample/history/pvp_solo_div2_div3/0319/solo.json");
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        JsonNode jnode = objectMapper.readTree(is1);
+
+        List<PvpSoloHistoryDto> dtos = objectMapper.readValue(jnode.get("data").get("2020639284").toString(),
+                new TypeReference<List<PvpSoloHistoryDto>>() {
+                });
+        dtos.remove(0);
+        Collections.sort(dtos);
+        dtos.forEach(x -> {
+            System.out.println(x);
+            calculate(x);
+        });
+
+
+        System.out.println(sum/count);
+    }
+
+    @DisplayName("2인 전대 레이팅 계산식")
+    @Test
+    public void 두명전대_레이팅_계산하기() throws IOException {
+        InputStream is1 = new FileInputStream("src/sample/history/pvp_solo_div2_div3/0319/div2.json");
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        JsonNode jnode = objectMapper.readTree(is1);
+
+        List<Pvp2HistoryDto> dtos = objectMapper.readValue(jnode.get("data").get("2020639284").toString(),
+                new TypeReference<List<Pvp2HistoryDto>>() {
+                });
+        dtos.remove(0);
+        Collections.sort(dtos);
+        dtos.forEach(x -> {
+            System.out.println(x);
+            calculate(x);
+        });
+        System.out.println(sum/count);
+    }
+
+    @DisplayName("3인전대 레이팅 계산식")
+    @Test
+    public void 세명_전대_계산하기() throws IOException {
+        InputStream is1 = new FileInputStream("src/sample/history/pvp_solo_div2_div3/0319/all.json");
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        JsonNode jnode = objectMapper.readTree(is1);
+
+        List<ShipDataDto> dtos = objectMapper.readValue(jnode.get("data").get("2020639284").toString(),
+                new TypeReference<List<ShipDataDto>>() {
+                });
+        dtos.remove(0);
+        Collections.sort(dtos);
+        dtos.forEach(x -> {
+            System.out.println(x);
+            calculate(x);
+        });
+
+
+        System.out.println(sum/count);
+    }
     @DisplayName("유저 레이팅 계산식")
     @Test
     public void 레이팅_계산하기() throws IOException {
-        InputStream is1 = new FileInputStream("src/sample/history/pvp_solo/0305/1114.json");
+        //InputStream is1 = new FileInputStream("src/sample/history/pvp_solo/0305/1114.json");
+        InputStream is1 = new FileInputStream("src/sample/history/pvp_solo_div2_div3/0318/test.json");
 
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode jnode = objectMapper.readTree(is1);
@@ -56,6 +120,222 @@ public class ExtractHistoryTests {
     }
 
     private void calculate(ShipDataDto shipDataDto){
+        diffTimeStamp(shipDataDto.getUpdated_at());
+        System.out.println(expectedData.get(String.valueOf(shipDataDto.getShip_id())));
+
+        double totalScore = 0;
+        double teamContributionScore = 0;
+        double spotScore = 0;
+        double capScore = 0;
+        double tankScore = 0;
+
+        double killScore = 0;
+        double dmgScore = 0;
+        double winScore = 0;
+        capScore = (shipDataDto.getPvp().getTeamCapturePoints() != 0)
+                ? (shipDataDto.getPvp().getCapturePoints() / (double) shipDataDto.getPvp().getTeamCapturePoints()) * 0.3
+                : 0.0;
+
+
+        spotScore = (shipDataDto.getPvp().getMaxDamageScouting() != 0)
+                ? (shipDataDto.getPvp().getMaxDamageScouting() / (double) shipDataDto.getPvp().getDamageScouting()) * 0.3
+                : 0.0;
+
+        /**
+         * TODO: DB로 부터 SELECT
+         * */
+        int shipFullHpFromDB = 40000;
+        tankScore = (shipDataDto.getPvp().getMaxTotalAgro()/shipFullHpFromDB)*0.2;
+
+
+        teamContributionScore = capScore+spotScore+tankScore;
+
+        if (!expectedData.containsKey(String.valueOf(shipDataDto.getShip_id()))){
+            System.out.println("계산불가");
+            return;
+        }
+
+        Map<String,String> data = expectedData.get(String.valueOf(shipDataDto.getShip_id()));
+
+        /**
+         * TODO: DB로 부터 SELECT
+         * */
+        double expectedKill = 0.5;
+        if (data.containsKey("average_frags")){
+            expectedKill = Double.parseDouble(data.get("average_frags"));
+        }
+
+        killScore = (shipDataDto.getPvp().getBattles() != 0)
+                ? (shipDataDto.getPvp().getFrags()/shipDataDto.getPvp().getBattles())/expectedKill
+                : shipDataDto.getPvp().getBattles()/expectedKill;
+
+        /**
+         * TODO: DB로 부터 SELECT
+         * */
+        double expectedDMG = Double.parseDouble(data.get("average_damage_dealt"));
+        dmgScore = shipDataDto.getPvp().maxDamageDealt/expectedDMG;
+
+        winScore = (shipDataDto.getPvp().getBattles() != 0)
+                ? ((double)shipDataDto.getPvp().getWins()/(double)shipDataDto.getPvp().getBattles())/Double.parseDouble(data.get("win_rate"))*0.01
+                : 0;
+
+        dmgScore = Math.max(((dmgScore-0.4)/(1-0.4)),0)*300;
+        killScore = Math.max(((killScore-0.1)/(1-0.1)),0)*200;
+        teamContributionScore=Math.max(((teamContributionScore-0.1)/(1-0.1)),0)*50;
+
+        totalScore = dmgScore+killScore+winScore+teamContributionScore;
+
+        sum+=totalScore;
+        count++;
+        System.out.println(totalScore);
+        System.out.println(count);
+    }
+
+    private void calculate(PvpSoloHistoryDto shipDataDto){
+        diffTimeStamp(shipDataDto.getUpdated_at());
+        System.out.println(expectedData.get(String.valueOf(shipDataDto.getShip_id())));
+
+        double totalScore = 0;
+        double teamContributionScore = 0;
+        double spotScore = 0;
+        double capScore = 0;
+        double tankScore = 0;
+
+        double killScore = 0;
+        double dmgScore = 0;
+        double winScore = 0;
+        capScore = (shipDataDto.getPvp().getTeamCapturePoints() != 0)
+                ? (shipDataDto.getPvp().getCapturePoints() / (double) shipDataDto.getPvp().getTeamCapturePoints()) * 0.3
+                : 0.0;
+
+
+        spotScore = (shipDataDto.getPvp().getMaxDamageScouting() != 0)
+                ? (shipDataDto.getPvp().getMaxDamageScouting() / (double) shipDataDto.getPvp().getDamageScouting()) * 0.3
+                : 0.0;
+
+        /**
+         * TODO: DB로 부터 SELECT
+         * */
+        int shipFullHpFromDB = 40000;
+        tankScore = (shipDataDto.getPvp().getMaxTotalAgro()/shipFullHpFromDB)*0.2;
+
+
+        teamContributionScore = capScore+spotScore+tankScore;
+
+        if (!expectedData.containsKey(String.valueOf(shipDataDto.getShip_id()))){
+            System.out.println("계산불가");
+            return;
+        }
+
+        Map<String,String> data = expectedData.get(String.valueOf(shipDataDto.getShip_id()));
+
+        /**
+         * TODO: DB로 부터 SELECT
+         * */
+        double expectedKill = 0.5;
+        if (data.containsKey("average_frags")){
+            expectedKill = Double.parseDouble(data.get("average_frags"));
+        }
+
+        killScore = (shipDataDto.getPvp().getBattles() != 0)
+                ? (shipDataDto.getPvp().getFrags()/shipDataDto.getPvp().getBattles())/expectedKill
+                : shipDataDto.getPvp().getBattles()/expectedKill;
+
+        /**
+         * TODO: DB로 부터 SELECT
+         * */
+        double expectedDMG = Double.parseDouble(data.get("average_damage_dealt"));
+        dmgScore = shipDataDto.getPvp().maxDamageDealt/expectedDMG;
+
+        winScore = (shipDataDto.getPvp().getBattles() != 0)
+                ? ((double)shipDataDto.getPvp().getWins()/(double)shipDataDto.getPvp().getBattles())/Double.parseDouble(data.get("win_rate"))*0.01
+                : 0;
+
+        dmgScore = Math.max(((dmgScore-0.4)/(1-0.4)),0)*300;
+        killScore = Math.max(((killScore-0.1)/(1-0.1)),0)*200;
+        teamContributionScore=Math.max(((teamContributionScore-0.1)/(1-0.1)),0)*50;
+
+        totalScore = dmgScore+killScore+winScore+teamContributionScore;
+
+        sum+=totalScore;
+        count++;
+        System.out.println(totalScore);
+        System.out.println(count);
+    }
+
+    private void calculate(Pvp2HistoryDto shipDataDto){
+        diffTimeStamp(shipDataDto.getUpdated_at());
+        System.out.println(expectedData.get(String.valueOf(shipDataDto.getShip_id())));
+
+        double totalScore = 0;
+        double teamContributionScore = 0;
+        double spotScore = 0;
+        double capScore = 0;
+        double tankScore = 0;
+
+        double killScore = 0;
+        double dmgScore = 0;
+        double winScore = 0;
+        capScore = (shipDataDto.getPvp().getTeamCapturePoints() != 0)
+                ? (shipDataDto.getPvp().getCapturePoints() / (double) shipDataDto.getPvp().getTeamCapturePoints()) * 0.3
+                : 0.0;
+
+
+        spotScore = (shipDataDto.getPvp().getMaxDamageScouting() != 0)
+                ? (shipDataDto.getPvp().getMaxDamageScouting() / (double) shipDataDto.getPvp().getDamageScouting()) * 0.3
+                : 0.0;
+
+        /**
+         * TODO: DB로 부터 SELECT
+         * */
+        int shipFullHpFromDB = 40000;
+        tankScore = (shipDataDto.getPvp().getMaxTotalAgro()/shipFullHpFromDB)*0.2;
+
+
+        teamContributionScore = capScore+spotScore+tankScore;
+
+        if (!expectedData.containsKey(String.valueOf(shipDataDto.getShip_id()))){
+            System.out.println("계산불가");
+            return;
+        }
+
+        Map<String,String> data = expectedData.get(String.valueOf(shipDataDto.getShip_id()));
+
+        /**
+         * TODO: DB로 부터 SELECT
+         * */
+        double expectedKill = 0.5;
+        if (data.containsKey("average_frags")){
+            expectedKill = Double.parseDouble(data.get("average_frags"));
+        }
+
+        killScore = (shipDataDto.getPvp().getBattles() != 0)
+                ? (shipDataDto.getPvp().getFrags()/shipDataDto.getPvp().getBattles())/expectedKill
+                : shipDataDto.getPvp().getBattles()/expectedKill;
+
+        /**
+         * TODO: DB로 부터 SELECT
+         * */
+        double expectedDMG = Double.parseDouble(data.get("average_damage_dealt"));
+        dmgScore = shipDataDto.getPvp().maxDamageDealt/expectedDMG;
+
+        winScore = (shipDataDto.getPvp().getBattles() != 0)
+                ? ((double)shipDataDto.getPvp().getWins()/(double)shipDataDto.getPvp().getBattles())/Double.parseDouble(data.get("win_rate"))*0.01
+                : 0;
+
+        dmgScore = Math.max(((dmgScore-0.4)/(1-0.4)),0)*300;
+        killScore = Math.max(((killScore-0.1)/(1-0.1)),0)*200;
+        teamContributionScore=Math.max(((teamContributionScore-0.1)/(1-0.1)),0)*50;
+
+        totalScore = dmgScore+killScore+winScore+teamContributionScore;
+
+        sum+=totalScore;
+        count++;
+        System.out.println(totalScore);
+        System.out.println(count);
+    }
+
+    private void calculate(Pvp3HistoryDto shipDataDto){
         diffTimeStamp(shipDataDto.getUpdated_at());
         System.out.println(expectedData.get(String.valueOf(shipDataDto.getShip_id())));
 

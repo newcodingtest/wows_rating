@@ -47,15 +47,14 @@ public interface WowsApiClient {
      * 2Clast_battle_time&account_id=2020639284&language=en
      * */
 
-    @GetMapping("/ships/stats/?fields=pvp.capture_points%2Cpvp.team_capture_points%2Cpvp.max_damage_scouting%" +
+    @GetMapping("/ships/stats/?language=en&fields=pvp.capture_points%2Cpvp.team_capture_points%2Cpvp.max_damage_scouting%" +
             "2Cpvp.damage_scouting%2Cpvp.max_total_agro%2Cpvp.frags%2Cpvp.battles%2Cpvp.max_damage_dealt%2Cpvp.wins%" +
             "2Cpvp.losses%2Cpvp_div2.capture_points%2Cpvp_div2.team_capture_points%2Cpvp_div2.max_damage_scouting%" +
             "2Cpvp_div2.damage_scouting%2Cpvp_div2.max_total_agro%2Cpvp_div2.frags%2Cpvp_div2.battles%" +
             "2Cpvp_div2.max_damage_dealt%2Cpvp_div2.wins%2Cpvp_div2.losses%2Cship_id%2Cupdated_at%2Clast_battle_time")
     Map<String, Object> getBattleHistory(
             @RequestParam("application_id") String applicationId,
-            @RequestParam("account_id") String account_id,
-            @RequestParam("language") String language
+            @RequestParam("account_id") String account_id
     );
 }
 

@@ -15,9 +15,12 @@ import org.springframework.test.context.ActiveProfiles;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -108,7 +111,7 @@ public class WowsApiClientRealTests {
         String userId = "2020639284";
 
         //when
-        Map<String, Object> expected = wowsApiClient.getBattleHistory(applicationId, userId, "en");
+        Map<String, Object> expected = wowsApiClient.getBattleHistory(applicationId, userId);
         caculate(expected);
         //then
     }
@@ -119,9 +122,28 @@ public class WowsApiClientRealTests {
                 new TypeReference<List<ShipDataDto>>() {
                 });
 
+        Collections.sort(dtos);
+
+        List<ShipDataDto> todayHistory = new ArrayList<>();
         for (ShipDataDto dto : dtos){
             System.out.println(dto);
+            if (diffTimeStamp(dto.getUpdated_at())>0){
+                break;
+            } else {
+                todayHistory.add(dto);
+            }
         }
+
+        System.out.println("size: "+todayHistory.size());
+    }
+
+    public long diffTimeStamp(long passTime){
+        long nowTime = Instant.now().getEpochSecond();
+        long diffTime = nowTime-passTime;
+
+        long diffDays = TimeUnit.SECONDS.toDays(diffTime);
+        System.out.println(diffDays+"일전 데이터");
+        return diffDays;
     }
 
 }

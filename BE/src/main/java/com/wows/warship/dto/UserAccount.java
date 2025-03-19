@@ -7,7 +7,7 @@ import lombok.Getter;
 @Builder
 @Getter
 public class UserAccount {
-    private Long id;
+    private String accountId;
     private String nickname;
     private int ratingScore;
     private int wins;

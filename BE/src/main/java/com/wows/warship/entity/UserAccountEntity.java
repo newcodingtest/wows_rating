@@ -20,7 +20,7 @@ public class UserAccountEntity extends BaseTimeEntity {
     private Long seq;
 
     @Column(name = "유저 아이디 번호")
-    private Long id;
+    private String accountId;
 
     @Column(name = "유저 닉네임")
     private String nickname;
@@ -31,7 +31,7 @@ public class UserAccountEntity extends BaseTimeEntity {
 
     public static UserAccountEntity from(UserAccount userAccount){
         return UserAccountEntity.builder()
-                .id(userAccount.getId())
+                .accountId(userAccount.getAccountId())
                 .nickname(userAccount.getNickname())
                 .ratingScore(userAccount.getRatingScore())
                 .nickname(userAccount.getNickname())
@@ -40,6 +40,7 @@ public class UserAccountEntity extends BaseTimeEntity {
 
     public UserAccount toModel(){
         return UserAccount.builder()
+                .accountId(accountId)
                 .nickname(nickname)
                 .ratingScore(ratingScore)
                 .build();

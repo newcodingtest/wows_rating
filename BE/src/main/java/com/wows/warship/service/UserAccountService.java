@@ -10,10 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.NoSuchElementException;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -25,6 +23,12 @@ public class UserAccountService {
     private final WowsApiClient wowsApiClient;
 
     private final UserAccountRepository userAccountRepository;
+
+
+    public List<UserAccount> getAccounts(){
+        return userAccountRepository.findAll().stream().map(UserAccountEntity::toModel)
+                .collect(Collectors.toList());
+    }
 
     public UserAccount getRate(String nickname){
         return userAccountRepository
@@ -51,7 +55,7 @@ public class UserAccountService {
                 String id = String.valueOf(names.get("account_id"));
                 UserAccount userAccount = UserAccount.builder()
                         .nickname(nickname)
-                        .id(Long.parseLong(id))
+                        .accountId(id)
                         .build();
                 userAccountRepository.save(UserAccountEntity.from(userAccount));
                 return userAccount;

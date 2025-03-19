@@ -35,6 +35,8 @@ public class RatingStatsService {
 
     /**
      * 유저 레이팅 새로 갱신
+     *  
+     * 갱신 시간 15분 제한
      * */
     private void updateRating(Long userId){
 

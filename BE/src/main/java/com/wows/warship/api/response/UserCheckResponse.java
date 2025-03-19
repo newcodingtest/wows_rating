@@ -7,12 +7,12 @@ import lombok.Getter;
 @Getter
 @Builder
 public class UserCheckResponse {
-    private Long userId;
+    private String userId;
     private String nickname;
 
     public static UserCheckResponse from(UserAccount userAccount){
         return UserCheckResponse.builder()
-                .userId(userAccount.getId())
+                .userId(userAccount.getAccountId())
                 .nickname(userAccount.getNickname())
                 .build();
     }
