@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.wows.warship.common.feign.WowsApiClient;
 import com.wows.warship.extract.ShipDataDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -91,10 +92,20 @@ public class WowsApiClientRealTests {
             String averageDmg = mockResponse.get(shipId).get("average_damage_dealt");
             String averageKill = mockResponse.get(shipId).get("average_frags");
             String averageWin = mockResponse.get(shipId).get("win_rate");
-            Map<String, Map<String, String>> actual = (Map<String, Map<String, String>>)response.get("data");
+
+            Map<String, Map<String, Object>> actual = (Map<String, Map<String, Object>>)response.get("data");
             String shipName = "";
+            String tier = "";
+            int health = 0;
+            System.out.println("shipId = " + shipId);
+            ShipDetailedDto shipDetailedDto = objectMapper.readValue(actual.get(shipId).toString(), ShipDetailedDto.class);
+
             try {
-                shipName = actual.get(shipId).get("name");
+                shipName = shipDetailedDto.getName();
+                tier = shipDetailedDto.getTier();
+                health = shipDetailedDto.getDefaultProfile().getArmour().getHealth();
+                System.out.println("티어: "+tier+" 피: "+health);
+
             }catch (Exception e){
                 System.out.println("데이터 없음");
             }

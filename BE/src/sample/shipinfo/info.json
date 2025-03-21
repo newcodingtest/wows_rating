@@ -1,15 +1,21 @@
 {
   "status": "ok",
   "meta": {
-    "count": 1,
-    "page_total": 1,
-    "total": 1,
-    "limit": 100,
-    "page": 1
-  },
+  "count": 1,
+  "page_total": 1,
+  "total": 1,
+  "limit": 100,
+  "page": 1
+},
   "data": {
-    "4179506480": {
-      "name": "Halland"
+  "4179506480": {
+    "tier": 10,
+    "name": "Halland",
+    "default_profile": {
+      "armour": {
+        "health": 19200
+      }
     }
   }
+}
 }
