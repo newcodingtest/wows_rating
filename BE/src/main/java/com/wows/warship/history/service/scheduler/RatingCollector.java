@@ -3,7 +3,7 @@ package com.wows.warship.history.service.scheduler;
 import com.wows.warship.account.domain.UserAccount;
 import com.wows.warship.history.domain.BattlesHistory;
 import com.wows.warship.history.service.BattlesHistoryService;
-import com.wows.warship.common.service.UserAccountService;
+import com.wows.warship.account.service.UserAccountService;
 import com.wows.warship.common.service.WowsApiService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -28,7 +28,7 @@ public class RatingCollector {
         List<UserAccount> users = userAccountService.getAccounts();
         for (UserAccount user : users){
             List<BattlesHistory> create = wowsApiService.getBattleHistoryFromOneDay(user.getAccountId())
-                            .stream().map(BattlesHistory::create)
+                            .stream().map(BattlesHistory::from)
                             .collect(Collectors.toList());
             battlesHistoryService.save(create, user.getAccountId());
         }

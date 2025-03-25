@@ -1,4 +1,4 @@
-package com.wows.warship.service;
+package com.wows.warship.history.service.scheduler;
 
 import com.wows.warship.history.service.scheduler.RatingCollector;
 import org.junit.jupiter.api.DisplayName;

@@ -31,4 +31,8 @@ public class BattlesHistoryService {
                 .map(BattlesHistoryEntity::toModel)
                 .collect(Collectors.toList());
     }
+
+    public void updateHistory(String accountId){
+
+    }
 }

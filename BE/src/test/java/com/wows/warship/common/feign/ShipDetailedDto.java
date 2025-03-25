@@ -1,4 +1,4 @@
-package com.wows.warship.client.feign;
+package com.wows.warship.common.feign;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

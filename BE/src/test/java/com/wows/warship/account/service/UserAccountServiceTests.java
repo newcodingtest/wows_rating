@@ -1,6 +1,6 @@
-package com.wows.warship.service;
+package com.wows.warship.account.service;
 
-import com.wows.warship.common.service.UserAccountService;
+import com.wows.warship.account.service.UserAccountService;
 import com.wows.warship.account.domain.UserAccount;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

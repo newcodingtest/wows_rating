@@ -42,6 +42,8 @@ public class BattlesHistoryEntity extends BaseTimeEntity {
     private int damage;
     private int tankingPoint;
 
+    private String battleType;
+
 
     public static BattlesHistoryEntity from(BattlesHistory battlesHistory, String accountId){
         return BattlesHistoryEntity.builder()
@@ -57,6 +59,7 @@ public class BattlesHistoryEntity extends BaseTimeEntity {
                 .kill(battlesHistory.getKill())
                 .damage(battlesHistory.getDamage())
                 .tankingPoint(battlesHistory.getTankingPoint())
+                .battleType(battlesHistory.getBattleType())
                 .build();
     }
 

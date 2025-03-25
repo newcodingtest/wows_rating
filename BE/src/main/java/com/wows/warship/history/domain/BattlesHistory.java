@@ -65,8 +65,10 @@ public class BattlesHistory {
 
     private long lastPlayTime;
 
+    private String battleType;
 
-    public static BattlesHistory create(BattleHistoryApiResponse battleHistoryApiResponse){
+
+    public static BattlesHistory from(BattleHistoryApiResponse battleHistoryApiResponse){
         return BattlesHistory.builder()
                 .wins(battleHistoryApiResponse.getPvp().getWins())
                 .losses(battleHistoryApiResponse.getPvp().getLosses())
@@ -80,7 +82,42 @@ public class BattlesHistory {
                 .kill(battleHistoryApiResponse.getPvp().getFrags())
                 .tankingPoint(battleHistoryApiResponse.getPvp().getMaxTotalAgro())
                 .lastPlayTime(battleHistoryApiResponse.getLast_battle_time())
+                .battleType(whatKindBattlesType(battleHistoryApiResponse))
                 .build();
+    }
+
+    private static String whatKindBattlesType(BattleHistoryApiResponse shipData){
+        int maxXp = shipData.getPvp().getMax_xp();
+        int rankXp = 0;
+        int soloXp = 0;
+        int div2Xp = 0;
+        int div3Xp = 0;
+        if (shipData.getRank_solo()!=null){
+            rankXp = shipData.getPvp().getMax_xp();
+        }
+        if (shipData.getPvp_solo()!=null){
+            soloXp = shipData.getPvp_solo().getMax_xp();
+        }
+        if (shipData.getPvp_div2()!=null){
+            div2Xp = shipData.getPvp_div2().getMax_xp();
+        }
+        if (shipData.getPvp_div3()!=null) {
+            div3Xp = shipData.getPvp_div3().getMax_xp();
+        }
+
+        if (maxXp==rankXp){
+            return "rank";
+        }
+        if (maxXp==div3Xp){
+            return "div3";
+        }
+        if (maxXp==div2Xp){
+            return "div2";
+        }
+        if (maxXp==soloXp){
+            return "solo";
+        }
+        return "none";
     }
 
 

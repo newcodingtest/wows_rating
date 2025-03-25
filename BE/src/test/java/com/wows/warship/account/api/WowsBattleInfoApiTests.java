@@ -1,9 +1,9 @@
-package com.wows.warship.api;
+package com.wows.warship.account.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wows.warship.common.exception.WowsErrorCode;
 import com.wows.warship.rate.service.RatingStatsService;
-import com.wows.warship.common.service.UserAccountService;
+import com.wows.warship.account.service.UserAccountService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.wows.warship.common.service;
+package com.wows.warship.account.service;
 
 import com.wows.warship.common.feign.WowsApiClient;
 import com.wows.warship.account.domain.UserAccount;

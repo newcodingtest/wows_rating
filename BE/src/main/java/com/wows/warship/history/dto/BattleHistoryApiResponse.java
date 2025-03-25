@@ -12,8 +12,6 @@ import lombok.*;
 @ToString
 public class BattleHistoryApiResponse implements Comparable<BattleHistoryApiResponse> {
     @JsonProperty("pvp")
-    @JsonAlias({"pvp_div2", "pvp_div3", "pvp_solo"})
-    //,"pvp_div2", "pvp_div3", "pvp_solo"
     private PvpStats pvp;
     @JsonProperty("updated_at")
     private long updated_at;
@@ -22,11 +20,35 @@ public class BattleHistoryApiResponse implements Comparable<BattleHistoryApiResp
     @JsonProperty("ship_id")
     private long ship_id;
 
+    @JsonProperty("rank_solo")
+    private DetailedStatDto rank_solo;
+
+    @JsonProperty("pvp_div2")
+    private DetailedStatDto pvp_div2;
+
+    @JsonProperty("pvp_div3")
+    private DetailedStatDto pvp_div3;
+
+    @JsonProperty("pvp_solo")
+    private DetailedStatDto pvp_solo;
+
     @Override
     public int compareTo(BattleHistoryApiResponse o) {
         return (int)(o.last_battle_time - this.last_battle_time);
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    @Getter
+    @ToString
+    public class DetailedStatDto {
+        @JsonProperty("max_xp")
+        int max_xp;
+
+        @JsonProperty("updated_at")
+        private long updated_at;
+        @JsonProperty("last_battle_time")
+        private long last_battle_time;
+    }
 
     @JsonIgnoreProperties(ignoreUnknown = true)
     @Getter
@@ -38,6 +60,8 @@ public class BattleHistoryApiResponse implements Comparable<BattleHistoryApiResp
         @JsonProperty("capture_points")
         public int capturePoints;
 
+        @JsonProperty("max_xp")
+        private int max_xp;
         /**
          * 승리 수
          * */

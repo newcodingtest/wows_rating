@@ -1,7 +1,7 @@
 package com.wows.warship.account.api;
 
 import com.wows.warship.common.api.response.UserCheckResponse;
-import com.wows.warship.common.service.UserAccountService;
+import com.wows.warship.account.service.UserAccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

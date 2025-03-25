@@ -15,6 +15,8 @@ public class PvpStats {
      * */
     @JsonProperty("capture_points")
     public int capturePoints;
+    @JsonProperty("max_xp")
+    private int max_xp;
 
     /**
      * 승리 수

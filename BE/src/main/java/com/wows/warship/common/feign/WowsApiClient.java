@@ -38,20 +38,11 @@ public interface WowsApiClient {
     
     /**
      * 최근 유저 전적 검색
-     * 
-     * https://api.worldofwarships.asia/wows/ships/stats/?application_id=4a5f774ca91614ec9e42bdb76474af15&fields=pvp.capture_points%
-     * 2Cpvp.team_capture_points%2Cpvp.max_damage_scouting%2Cpvp.damage_scouting%2Cpvp.max_total_agro%2Cpvp.frags%2Cpvp.battles%
-     * 2Cpvp.max_damage_dealt%2Cpvp.wins%2Cpvp.losses%2Cpvp_div2.capture_points%2Cpvp_div2.team_capture_points%
-     * 2Cpvp_div2.max_damage_scouting%2Cpvp_div2.damage_scouting%2Cpvp_div2.max_total_agro%2Cpvp_div2.frags%
-     * 2Cpvp_div2.battles%2Cpvp_div2.max_damage_dealt%2Cpvp_div2.wins%2Cpvp_div2.losses%2Cship_id%2Cupdated_at%
-     * 2Clast_battle_time&account_id=2020639284&language=en
+     *
+     https://api.worldofwarships.asia/wows/ships/stats/?application_id=4a5f774ca91614ec9e42bdb76474af15&extra=pvp_solo%2Cpvp_div2%2Cpvp_div3%2Crank_solo&language=en&account_id=2020639284
      * */
 
-    @GetMapping("/ships/stats/?language=en&fields=pvp.capture_points%2Cpvp.team_capture_points%2Cpvp.max_damage_scouting%" +
-            "2Cpvp.damage_scouting%2Cpvp.max_total_agro%2Cpvp.frags%2Cpvp.battles%2Cpvp.max_damage_dealt%2Cpvp.wins%" +
-            "2Cpvp.losses%2Cpvp_div2.capture_points%2Cpvp_div2.team_capture_points%2Cpvp_div2.max_damage_scouting%" +
-            "2Cpvp_div2.damage_scouting%2Cpvp_div2.max_total_agro%2Cpvp_div2.frags%2Cpvp_div2.battles%" +
-            "2Cpvp_div2.max_damage_dealt%2Cpvp_div2.wins%2Cpvp_div2.losses%2Cship_id%2Cupdated_at%2Clast_battle_time")
+    @GetMapping("/ships/stats/?language=en&extra=pvp_solo%2Cpvp_div2%2Cpvp_div3%2Crank_solo")
     Map<String, Object> getBattleHistory(
             @RequestParam("application_id") String applicationId,
             @RequestParam("account_id") String account_id

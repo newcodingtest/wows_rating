@@ -1,7 +1,6 @@
 package com.wows.warship.extract;
 
 
-import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -17,15 +16,26 @@ import lombok.ToString;
 @ToString
 public class ShipDataDto implements Comparable<ShipDataDto> {
     @JsonProperty("pvp")
-    @JsonAlias({"pvp_div2", "pvp_div3", "pvp_solo"})
-    //,"pvp_div2", "pvp_div3", "pvp_solo"
     private PvpStats pvp;
+
     @JsonProperty("updated_at")
     private long updated_at;
     @JsonProperty("last_battle_time")
     private long last_battle_time;
     @JsonProperty("ship_id")
     private long ship_id;
+
+    @JsonProperty("rank_solo")
+    private DetailedStatsDto rank_solo;
+
+    @JsonProperty("pvp_div2")
+    private DetailedStatsDto pvp_div2;
+
+    @JsonProperty("pvp_div3")
+    private DetailedStatsDto pvp_div3;
+
+    @JsonProperty("pvp_solo")
+    private DetailedStatsDto pvp_solo;
 
     @Override
     public int compareTo(ShipDataDto o) {

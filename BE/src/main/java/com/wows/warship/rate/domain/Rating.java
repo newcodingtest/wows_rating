@@ -3,9 +3,14 @@ package com.wows.warship.rate.domain;
 import com.wows.warship.history.domain.BattlesHistory;
 import lombok.Builder;
 import lombok.Getter;
+import org.bouncycastle.asn1.x500.style.RFC4519Style;
 
+import java.time.Instant;
+import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.IntStream;
 
 @Getter
 @Builder
@@ -58,5 +63,29 @@ public class Rating {
 
         double rating = dmgScore+killScore+winScore+teamContributionScore;
         return (long)rating;
+    }
+
+    public static long calculate(List<BattlesHistory> battlesHistory, Map<String, String> expected, int untilDays){
+        int totalRating = 0;
+        int cnt = 0;
+        for (int i=0; i<battlesHistory.size(); i++){
+            if (diffTimeStampDays(battlesHistory.get(i).getLastPlayTime())<untilDays){
+                totalRating += calculate(battlesHistory.get(i), expected);
+                cnt++;
+            } else {
+                break;
+            }
+        }
+
+        return totalRating/cnt;
+    }
+
+    private static long diffTimeStampDays(long passTime){
+        long nowTime = Instant.now().getEpochSecond();
+        long diffTime = nowTime-passTime;
+
+        long diffDays = TimeUnit.SECONDS.toDays(diffTime);
+
+        return diffDays;
     }
 }

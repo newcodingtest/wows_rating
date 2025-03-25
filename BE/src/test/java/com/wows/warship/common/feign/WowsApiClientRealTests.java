@@ -1,10 +1,9 @@
-package com.wows.warship.client.feign;
+package com.wows.warship.common.feign;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.wows.warship.common.feign.WowsApiClient;
 import com.wows.warship.extract.ShipDataDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -82,7 +81,7 @@ public class WowsApiClientRealTests {
         Map<String, Map<String,String>> mockResponse = objectMapper.readValue(jnode.get("data").toString(),
                 new TypeReference< Map<String, Map<String,String>> >() {
                 });
-        System.out.println("INSERT INTO SHIP_INFO_ENTITY (SHIP_ID, SHIP_NAME, AVERAGE_DMG, AVERAGE_KILL, AVERAGE_WIN_RATE) VALUES");
+        System.out.println("INSERT INTO SHIP_INFO_ENTITY (SHIP_ID, TIER, SHIP_NAME, HEALTH, AVERAGE_DMG, AVERAGE_KILL, AVERAGE_WIN_RATE) VALUES");
         for (Map.Entry entry : mockResponse.entrySet()){
             String shipId = entry.getKey().toString();
             Map<String, Object>  response = wowsApiClient.getShipInfo("4a5f774ca91614ec9e42bdb76474af15",
@@ -97,19 +96,18 @@ public class WowsApiClientRealTests {
             String shipName = "";
             String tier = "";
             int health = 0;
-            System.out.println("shipId = " + shipId);
-            ShipDetailedDto shipDetailedDto = objectMapper.readValue(actual.get(shipId).toString(), ShipDetailedDto.class);
+            String json = objectMapper.writeValueAsString(actual.get(shipId));
+            ShipDetailedDto shipDetailedDto = objectMapper.readValue(json, ShipDetailedDto.class);
 
             try {
                 shipName = shipDetailedDto.getName();
                 tier = shipDetailedDto.getTier();
                 health = shipDetailedDto.getDefaultProfile().getArmour().getHealth();
-                System.out.println("티어: "+tier+" 피: "+health);
 
             }catch (Exception e){
                 System.out.println("데이터 없음");
             }
-            System.out.println("("+shipId+", '"+shipName+"',"+averageDmg+","+averageKill+","+averageWin+"),");
+            System.out.println("("+shipId+", "+tier+",'"+shipName+"',"+health+","+averageDmg+","+averageKill+","+averageWin+"),");
         }
     }
 
@@ -137,10 +135,11 @@ public class WowsApiClientRealTests {
 
         List<ShipDataDto> todayHistory = new ArrayList<>();
         for (ShipDataDto dto : dtos){
-            System.out.println(dto);
             if (diffTimeStamp(dto.getUpdated_at())>0){
                 break;
             } else {
+                System.out.println(dto);
+                whatKindBattles(dto);
                 todayHistory.add(dto);
             }
         }
@@ -153,8 +152,41 @@ public class WowsApiClientRealTests {
         long diffTime = nowTime-passTime;
 
         long diffDays = TimeUnit.SECONDS.toDays(diffTime);
-        System.out.println(diffDays+"일전 데이터");
         return diffDays;
+    }
+
+    public void whatKindBattles(ShipDataDto shipDataDto){
+        int maxXp = shipDataDto.getPvp().getMax_xp();
+        System.out.println("경험치: " + maxXp);
+        int rankXp = 0;
+        int soloXp = 0;
+        int div2Xp = 0;
+        int div3Xp = 0;
+        if (shipDataDto.getRank_solo()!=null){
+            rankXp = shipDataDto.getRank_solo().getMax_xp();
+        }
+        if (shipDataDto.getPvp_solo()!=null){
+            soloXp = shipDataDto.getPvp_solo().getMax_xp();
+        }
+        if (shipDataDto.getPvp_div2()!=null){
+            div2Xp = shipDataDto.getPvp_div2().getMax_xp();
+        }
+        if (shipDataDto.getPvp_div3()!=null) {
+            div3Xp = shipDataDto.getPvp_div3().getMax_xp();
+        }
+
+        if (maxXp==rankXp){
+            System.out.println("랭크 게임");
+        }
+        if (maxXp==div3Xp){
+            System.out.println("3인전대 게임");
+        }
+        if (maxXp==div2Xp){
+            System.out.println("2인전대 게임");
+        }
+        if (maxXp==soloXp){
+            System.out.println("솔로 게임");
+        }
     }
 
 }
