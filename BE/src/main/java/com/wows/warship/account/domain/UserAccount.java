@@ -2,7 +2,9 @@ package com.wows.warship.account.domain;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.ToString;
 
+@ToString
 @Builder
 @Getter
 public class UserAccount {

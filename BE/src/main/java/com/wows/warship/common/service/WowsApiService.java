@@ -36,8 +36,7 @@ public class WowsApiService {
         return wowsApiClient.getAccountList(applicationId, nickname);
     }
 
-    public List<BattleHistoryApiResponse> getBattleHistoryFromOneDay(
-                                                   String accountId) {
+    public List<BattleHistoryApiResponse> getBattleHistoryFromOneDay(String accountId) {
         Map<String, Object> response = wowsApiClient.getBattleHistory(applicationId, accountId);
         JsonNode jsonNode = objectMapper.valueToTree(response);
         List<BattleHistoryApiResponse> allHistory = new ArrayList<>();
@@ -62,6 +61,23 @@ public class WowsApiService {
             }
         }
         return todayHistory;
+    }
+
+    public List<BattleHistoryApiResponse> getBattleHistory(String accountId) {
+        Map<String, Object> response = wowsApiClient.getBattleHistory(applicationId, accountId);
+        JsonNode jsonNode = objectMapper.valueToTree(response);
+        List<BattleHistoryApiResponse> allHistory = null;
+        try {
+            allHistory = objectMapper.readValue(jsonNode.get("data").get(accountId).toString(),
+                    new TypeReference<List<BattleHistoryApiResponse>>() {
+                    });
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+
+        Collections.sort(allHistory);
+        log.info("api {}", allHistory.size());
+        return allHistory;
     }
 
     public long diffTimeStamp(long passTime){

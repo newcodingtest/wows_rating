@@ -28,7 +28,8 @@ public class RatingCollector {
         List<UserAccount> users = userAccountService.getAccounts();
         for (UserAccount user : users){
             List<BattlesHistory> create = wowsApiService.getBattleHistoryFromOneDay(user.getAccountId())
-                            .stream().map(BattlesHistory::from)
+                            .stream()
+                            .map(BattlesHistory::from)
                             .collect(Collectors.toList());
             battlesHistoryService.save(create, user.getAccountId());
         }

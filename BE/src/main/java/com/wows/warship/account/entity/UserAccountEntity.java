@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.ColumnDefault;
 
 
 @Getter
@@ -27,6 +28,7 @@ public class UserAccountEntity extends BaseTimeEntity {
     private String nickname;
 
     @Column(name = "레이팅 점수")
+    @ColumnDefault("0")
     private int ratingScore;
 
 

@@ -7,12 +7,14 @@ import com.wows.warship.common.exception.WowsErrorCode;
 import com.wows.warship.common.exception.WowsException;
 import com.wows.warship.account.repository.UserAccountRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
+@Slf4j
 @RequiredArgsConstructor
 @Service
 public class UserAccountService {
@@ -50,6 +52,7 @@ public class UserAccountService {
         ArrayList<Map<String, String>> actual = (ArrayList)response.get("data");
 
         for (Map<String, String> names : actual){
+            log.info("{}", names);
             String name = names.get("nickname");
             if (name.equals(nickname)){
                 String id = String.valueOf(names.get("account_id"));

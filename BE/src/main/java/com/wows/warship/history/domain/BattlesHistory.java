@@ -3,8 +3,10 @@ package com.wows.warship.history.domain;
 import com.wows.warship.history.dto.BattleHistoryApiResponse;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.ToString;
 
 
+@ToString
 @Getter
 @Builder
 public class BattlesHistory {
@@ -64,11 +66,22 @@ public class BattlesHistory {
      * */
 
     private long lastPlayTime;
-
+    
+    
+    /**
+     * 배틀 종류(솔로, 2인전대, 3인전대, 랭크)
+     * 
+     * */
     private String battleType;
+    
+    
+    /**
+     * 경험치
+     * */
+    private int maxXp;
 
 
-    public static BattlesHistory from(BattleHistoryApiResponse battleHistoryApiResponse){
+    public static BattlesHistory from(BattleHistoryApiResponse battleHistoryApiResponse) {
         return BattlesHistory.builder()
                 .wins(battleHistoryApiResponse.getPvp().getWins())
                 .losses(battleHistoryApiResponse.getPvp().getLosses())
@@ -83,6 +96,7 @@ public class BattlesHistory {
                 .tankingPoint(battleHistoryApiResponse.getPvp().getMaxTotalAgro())
                 .lastPlayTime(battleHistoryApiResponse.getLast_battle_time())
                 .battleType(whatKindBattlesType(battleHistoryApiResponse))
+                .maxXp(battleHistoryApiResponse.getPvp().getMax_xp())
                 .build();
     }
 

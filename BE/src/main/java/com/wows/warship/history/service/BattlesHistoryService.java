@@ -6,6 +6,7 @@ import com.wows.warship.history.repository.BattlesHistoryRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,8 +18,12 @@ public class BattlesHistoryService {
 
     private final BattlesHistoryRepository battlesHistoryRepository;
 
-    @Transactional
+    @Async
     public void save(List<BattlesHistory> battles, String accountId){
+      saveDB(battles,accountId);
+    }
+    @Transactional
+    private void saveDB(List<BattlesHistory> battles, String accountId){
         battlesHistoryRepository.saveAll(battles.stream()
                 .map(x -> BattlesHistoryEntity.from(x, accountId))
                 .collect(Collectors.toList()));
@@ -29,6 +34,7 @@ public class BattlesHistoryService {
         return battlesHistoryRepository.findByAccountId(accountId)
                 .stream()
                 .map(BattlesHistoryEntity::toModel)
+                .filter(battle -> battle.getMaxXp()>0)
                 .collect(Collectors.toList());
     }
 
