@@ -12,7 +12,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class RatingStatics {
+public class RatingStaticsResponse {
     private Overall overall;
     private Today today;
     private Week week;

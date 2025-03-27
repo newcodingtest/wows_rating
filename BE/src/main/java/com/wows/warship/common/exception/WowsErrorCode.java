@@ -6,7 +6,7 @@ public enum WowsErrorCode {
     UNKNOWN_SERVER_ERROR_CODE(HttpStatus.INTERNAL_SERVER_ERROR, "알 수 없는 에러입니다.", "0000"),
     REQUEST_VALID_ERROR_CODE(HttpStatus.BAD_REQUEST, "요청을 다시 확인해주세요.", "0001"),
     NOT_FOUNT_USER(HttpStatus.NOT_FOUND, "유저를 찾을 수 없습니다.", "0002"),
-            ;
+    TOO_MANY_REQUESTS(HttpStatus.NOT_FOUND, "너무 많이 요청했습니다. 15분뒤에 다시 요청해주세요", "0003");
     private final HttpStatus status;
     private final String message;
     private final String code;

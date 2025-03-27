@@ -37,6 +37,7 @@ wows:
   api:
     key: 4a5f774ca91614ec9e42bdb76474af15
 
-#  task:
-#    scheduling:
-#      enabled: false
+  task:
+    scheduling:
+      cron: 0 0 4,16 * * *
+      enabled: false

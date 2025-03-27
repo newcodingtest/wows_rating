@@ -23,7 +23,7 @@ public class RatingCollector {
     /**
      * 유저 전적 히스토리 수집 스케쥴러(오전 6시마다)
      * */
-    @Scheduled(cron = "0 0 6 * * *")
+    @Scheduled(cron = "${wows.task.scheduling.cron}")
     public void getUserRating() {
         List<UserAccount> users = userAccountService.getAccounts();
         for (UserAccount user : users){

@@ -39,6 +39,7 @@ public class WowsApiService {
     public List<BattleHistoryApiResponse> getBattleHistoryFromOneDay(String accountId) {
         Map<String, Object> response = wowsApiClient.getBattleHistory(applicationId, accountId);
         JsonNode jsonNode = objectMapper.valueToTree(response);
+
         List<BattleHistoryApiResponse> allHistory = new ArrayList<>();
         try {
             allHistory = objectMapper.readValue(jsonNode.get("data").get(accountId).toString(),
@@ -53,13 +54,13 @@ public class WowsApiService {
 
         List<BattleHistoryApiResponse> todayHistory = new ArrayList<>();
         for (BattleHistoryApiResponse dto : allHistory){
-            System.out.println(dto);
             if (diffTimeStamp(dto.getUpdated_at())>0){
                 break;
             } else {
                 todayHistory.add(dto);
             }
         }
+        log.info("today schedule data: {}", todayHistory);
         return todayHistory;
     }
 

@@ -19,6 +19,12 @@ public class WowsException extends RuntimeException {
         }
     }
 
+    public static class TooManyRequestsException extends WowsException {
+        public TooManyRequestsException(final WowsErrorCode errorCode, final String parameter) {
+            super(errorCode.getStatus(), new ErrorCode<>(errorCode.getCode(), errorCode.getMessage(), parameter));
+        }
+    }
+
     public HttpStatus getStatus() {
         return status;
     }

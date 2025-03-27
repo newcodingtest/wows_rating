@@ -1,7 +1,7 @@
 package com.wows.warship.rate.service;
 
 import com.wows.warship.account.service.UserAccountService;
-import com.wows.warship.rate.api.response.RatingStatics;
+import com.wows.warship.rate.api.response.RatingStaticsResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +27,10 @@ public class RatingStatsServiceTests {
         userAccountService.isUserExist(nickname);
 
         //when
-        RatingStatics ratingStatics = ratingStatsService.getRating(nickname);
+        RatingStaticsResponse ratingStaticsResponse = ratingStatsService.getRating(nickname);
 
         //then
-        System.out.println("ratingStatics = " + ratingStatics);
+        System.out.println("ratingStatics = " + ratingStaticsResponse);
     }
 
 }

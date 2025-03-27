@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class Rating {
     private int ratingScore;
     private int battleCount;
-    private int wins;
+    private double wins;
 
     public static Rating calculate(BattlesHistory battlesHistory, Map<Long, ShipInfo> expected){
        boolean isExistShip = expected.containsKey(battlesHistory.getShipNumber());
@@ -53,9 +53,14 @@ public class Rating {
         double expectedDMG = shipInfo.getAverageDmg();
         double dmgScore = battlesHistory.getDamage()/expectedDMG;
 
-        double winScore = (battlesHistory.getBattles() != 0)
-                ? ((double)battlesHistory.getWins()/(double)battlesHistory.getBattles())/shipInfo.getAverageWinRate()*0.01
+        double winning = (battlesHistory.getBattles() != 0)
+                ? ((double)battlesHistory.getWins()/(double)battlesHistory.getBattles())
                 : 0;
+        double calWinning = (battlesHistory.getBattles() != 0)
+                ? ((double)battlesHistory.getWins()/(double)battlesHistory.getBattles())/shipInfo.getAverageWinRate()
+                : 0;
+
+        double winScore = calWinning*0.01;
 
         /**
          * 가중치 작업
@@ -68,14 +73,14 @@ public class Rating {
 
         return Rating.builder()
                 .ratingScore((int)rating)
-                .wins((int)winScore)
+                .wins(winning)
                 .build();
     }
 
     public static Rating calculate(List<BattlesHistory> battlesHistory, Map<Long, ShipInfo> expected, int untilDays){
         int totalRating = 0;
         int cnt = 0;
-        int wins = 0;
+        double wins = 0;
         for (int i=0; i<battlesHistory.size(); i++){
             if (diffTimeStampDays(battlesHistory.get(i).getLastPlayTime())<untilDays){
                 try {
@@ -97,7 +102,7 @@ public class Rating {
         return Rating.builder()
                 .ratingScore(totalRating)
                 .battleCount(cnt)
-                .wins(wins)
+                .wins(wins*100)
                 .build();
     }
 
