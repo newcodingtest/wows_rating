@@ -107,7 +107,7 @@ public class BattlesHistory {
         int div2Xp = 0;
         int div3Xp = 0;
         if (shipData.getRank_solo()!=null){
-            rankXp = shipData.getPvp().getMax_xp();
+            rankXp = shipData.getRank_solo().getMax_xp();
         }
         if (shipData.getPvp_solo()!=null){
             soloXp = shipData.getPvp_solo().getMax_xp();
