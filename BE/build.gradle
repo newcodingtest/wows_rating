@@ -48,6 +48,9 @@ dependencies {
 
     //h2db
     runtimeOnly 'com.h2database:h2'
+
+    //bucket4j
+    implementation 'com.bucket4j:bucket4j-core:8.7.0'
 }
 
 tasks.named('test') {

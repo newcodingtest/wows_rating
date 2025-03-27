@@ -34,7 +34,7 @@ public class RatingStatics {
     public static class Today {
         private int numOfGames;
         private int ratingScore;
-        private int wins;
+        private double wins;
     }
     @NoArgsConstructor
     @AllArgsConstructor
@@ -44,7 +44,7 @@ public class RatingStatics {
     public static class Week {
         private int numOfGames;
         private int ratingScore;
-        private int wins;
+        private double wins;
     }
     @NoArgsConstructor
     @AllArgsConstructor
@@ -54,6 +54,6 @@ public class RatingStatics {
     public static class Month {
         private int numOfGames;
         private int ratingScore;
-        private int wins;
+        private double wins;
     }
 }
