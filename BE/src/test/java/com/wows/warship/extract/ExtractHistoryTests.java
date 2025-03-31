@@ -37,7 +37,7 @@ public class ExtractHistoryTests {
     @Test
     public void 레이팅_계산하기() throws IOException {
         //InputStream is1 = new FileInputStream("src/sample/history/pvp_solo/0305/1114.json");
-        InputStream is1 = new FileInputStream("src/sample/history/pvp_solo_div2_div3/0325/test.json");
+        InputStream is1 = new FileInputStream("src/sample/history/pvp_solo_div2_div3/0328/test.json");
 
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode jnode = objectMapper.readTree(is1);
@@ -52,7 +52,6 @@ public class ExtractHistoryTests {
         dtos.forEach(x -> {
             calculate(x);
         });
-
 
         System.out.println(sum/count);
     }

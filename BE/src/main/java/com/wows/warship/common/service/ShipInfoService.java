@@ -17,7 +17,7 @@ public class ShipInfoService {
     private final ShipInfoRepository shipInfoRepository;
 
 
-    @Cacheable(value = "shipinfo", key = "#shipId")
+    @Cacheable(value = "shipinfo")
     public Map<Long, ShipInfo> getShipInfo(){
         return shipInfoRepository.findAll().stream()
                 .map(ShipInfoEntity::toModel)

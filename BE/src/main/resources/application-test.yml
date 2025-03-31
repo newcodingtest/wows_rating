@@ -39,5 +39,5 @@ wows:
 
   task:
     scheduling:
-      cron: 0 0 4,16 * * *
+      cron: 0 0 4 * * *
       enabled: false

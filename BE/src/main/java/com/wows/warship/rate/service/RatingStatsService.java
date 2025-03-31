@@ -47,13 +47,19 @@ public class RatingStatsService {
 
         // 처음 조회해서 DB에 히스토리가 없을 때
         if (find.getRatingScore() == 0) {
+            log.info("db 에 없습니다.");
             List<BattlesHistory> apiHistory = fetchApiHistory(accountId);
             battlesHistoryService.save(apiHistory, accountId);
-            return createRatingStatics(calculateRatings(apiHistory, shipInfoMap));
+            RatingStaticsResponse ratingStaticsResponse = createRatingStatics(calculateRatings(apiHistory, shipInfoMap));
+            userAccountService.update(nickname, ratingStaticsResponse.getOverall().getRatingScore());
+            return ratingStaticsResponse;
         }
-
         // 기존 데이터가 있는 경우
-        return createRatingStatics(calculateRatingsForExistingUser(find, accountId, shipInfoMap));
+        log.info("db 에 있습니다.");
+        RatingStaticsResponse ratingStaticsResponse = createRatingStatics(calculateRatingsForExistingUser(find, accountId, shipInfoMap));
+        userAccountService.update(nickname, ratingStaticsResponse.getOverall().getRatingScore());
+
+        return ratingStaticsResponse;
     }
 
     // API에서 전적 조회 및 변환
@@ -89,8 +95,14 @@ public class RatingStatsService {
     }
 
     private RatingStaticsResponse createRatingStatics(Map<Integer, Rating> ratings) {
+        int overRating = ratings.get(10000).getRatingScore();
+        int todayRating = ratings.get(1).getRatingScore();
+        int weekRating = ratings.get(7).getRatingScore();
+        int monthRating = ratings.get(10000).getRatingScore();
+
+        log.info("over: {}, today: {}, week: {}, month: {}", weekRating, todayRating, weekRating, monthRating);
         RatingStaticsResponse.Overall overall = RatingStaticsResponse.Overall.builder()
-                .ratingScore(ratings.get(10000).getRatingScore())
+                .ratingScore(overRating)
                 .build();
 
         RatingStaticsResponse.Today today = RatingStaticsResponse.Today.builder()

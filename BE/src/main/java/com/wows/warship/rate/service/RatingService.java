@@ -42,4 +42,8 @@ public class RatingService {
 
         battlesHistoryService.save(todayHistory, accountId);
     }
+
+    public void calculate(BattlesHistory battlesHistory){
+
+    }
 }

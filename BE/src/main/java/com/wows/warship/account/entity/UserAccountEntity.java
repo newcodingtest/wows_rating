@@ -48,4 +48,8 @@ public class UserAccountEntity extends BaseTimeEntity {
                 .ratingScore(ratingScore)
                 .build();
     }
+
+    public void changeRatingScore(int ratingScore){
+        this.ratingScore = ratingScore;
+    }
 }

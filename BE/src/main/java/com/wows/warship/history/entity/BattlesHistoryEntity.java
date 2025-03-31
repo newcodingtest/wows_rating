@@ -44,6 +44,7 @@ public class BattlesHistoryEntity extends BaseTimeEntity {
 
     private String battleType;
 
+    private int maxXp;
 
     public static BattlesHistoryEntity from(BattlesHistory battlesHistory, String accountId){
         return BattlesHistoryEntity.builder()
@@ -60,6 +61,7 @@ public class BattlesHistoryEntity extends BaseTimeEntity {
                 .damage(battlesHistory.getDamage())
                 .tankingPoint(battlesHistory.getTankingPoint())
                 .battleType(battlesHistory.getBattleType())
+                .maxXp(battlesHistory.getMaxXp())
                 .build();
     }
 
@@ -76,6 +78,7 @@ public class BattlesHistoryEntity extends BaseTimeEntity {
                 .kill(kill)
                 .damage(damage)
                 .tankingPoint(tankingPoint)
+                .maxXp(maxXp)
                 .build();
     }
 }

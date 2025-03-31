@@ -6,9 +6,11 @@ import com.wows.warship.account.entity.UserAccountEntity;
 import com.wows.warship.common.exception.WowsErrorCode;
 import com.wows.warship.common.exception.WowsException;
 import com.wows.warship.account.repository.UserAccountRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -26,6 +28,17 @@ public class UserAccountService {
 
     private final UserAccountRepository userAccountRepository;
 
+    @Async
+    public void update(String nickname, int rating){
+        uppateRate(nickname, rating);
+    }
+
+    @Transactional
+    private void uppateRate(String nickname, int rating){
+        UserAccountEntity account = userAccountRepository.findByNickname(nickname).get();
+
+        account.changeRatingScore(rating);
+    }
 
     public List<UserAccount> getAccounts(){
         return userAccountRepository.findAll().stream().map(UserAccountEntity::toModel)
@@ -34,14 +47,15 @@ public class UserAccountService {
 
     public UserAccount getRate(String nickname){
         return userAccountRepository
-                .findByNickname(nickname).get().toModel();
+                .findByNickname(nickname.toLowerCase()).get().toModel();
     }
 
     public UserAccount isUserExist(String nickname){
-        Optional<UserAccount> find = isUserExistInDb(nickname);
+        String lowerNickname = nickname.toLowerCase();
+        Optional<UserAccount> find = isUserExistInDb(lowerNickname);
 
         if(find.isEmpty()){
-           return isUserExistInApi(nickname);
+           return isUserExistInApi(lowerNickname);
         }
         return find.get();
     }
@@ -53,7 +67,7 @@ public class UserAccountService {
 
         for (Map<String, String> names : actual){
             log.info("{}", names);
-            String name = names.get("nickname");
+            String name = names.get("nickname").toLowerCase();
             if (name.equals(nickname)){
                 String id = String.valueOf(names.get("account_id"));
                 UserAccount userAccount = UserAccount.builder()
