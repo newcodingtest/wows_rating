@@ -1,11 +1,10 @@
 package com.wows.warship.history.entity;
 
+import com.wows.warship.common.domain.ShipInfo;
+import com.wows.warship.common.entity.ShipInfoEntity;
 import com.wows.warship.history.domain.BattlesHistory;
 import com.wows.warship.common.entity.BaseTimeEntity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -22,7 +21,9 @@ public class BattlesHistoryEntity extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private Long shipNumber;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ship_id", referencedColumnName = "shipId")
+    private ShipInfoEntity shipInfo;
 
     private String accountId;
 
@@ -46,10 +47,10 @@ public class BattlesHistoryEntity extends BaseTimeEntity {
 
     private int maxXp;
 
-    public static BattlesHistoryEntity from(BattlesHistory battlesHistory, String accountId){
+    public static BattlesHistoryEntity from(BattlesHistory battlesHistory, ShipInfo shipInfo, String accountId){
         return BattlesHistoryEntity.builder()
-                .shipNumber(battlesHistory.getShipNumber())
                 .accountId(accountId)
+                .shipInfo(ShipInfoEntity.from(shipInfo))
                 .lastBattleTime(battlesHistory.getLastPlayTime())
                 .wins(battlesHistory.getWins())
                 .losses(battlesHistory.getLosses())
@@ -67,7 +68,7 @@ public class BattlesHistoryEntity extends BaseTimeEntity {
 
     public BattlesHistory toModel(){
         return BattlesHistory.builder()
-                .shipNumber(shipNumber)
+                .shipNumber(shipInfo.toModel().getShipId())
                 .lastPlayTime(lastBattleTime)
                 .wins(wins)
                 .losses(losses)

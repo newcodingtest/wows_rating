@@ -1,5 +1,6 @@
-package com.wows.warship.common.entity;
+package com.wows.warship.history.entity;
 
+import com.wows.warship.common.entity.BaseTimeEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 

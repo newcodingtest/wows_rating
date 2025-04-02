@@ -1,7 +1,10 @@
 package com.wows.warship.account.service;
 
-import com.wows.warship.account.service.UserAccountService;
+import com.wows.warship.account.entity.UserAccountEntity;
+import com.wows.warship.account.event.UpdatedUserEventHandler;
+import com.wows.warship.account.repository.UserAccountRepository;
 import com.wows.warship.account.domain.UserAccount;
+import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +16,17 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+
 @ActiveProfiles("test")
 @SpringBootTest
 public class UserAccountServiceTests {
 
     @Autowired
     private UserAccountService userAccountService;
+    @Autowired
+    private UserAccountRepository userAccountRepository;
+    @Autowired
+    private UpdatedUserEventHandler eventHandler;
 
 
     @DisplayName("유저 정보들을 모두 확인 할 수 있다.")
@@ -76,4 +84,58 @@ public class UserAccountServiceTests {
         //then
         assertEquals(nickname, isExist.getNickname());
     }
+
+    @DisplayName("유저정보를 수정 할 수 있다.")
+    @Test
+    @Transactional // 테스트 후 트랜잭션 롤백
+    public void testUpdatesF() {
+        // Given
+        String nickname = "xyamat0x";
+        int newRating = 200;
+
+        UserAccount userAccount = UserAccount.builder()
+                .nickname(nickname)
+                .accountId("1")
+                .build();
+        userAccountRepository.save(UserAccountEntity.from(userAccount));
+
+        //when
+        userAccountService.uppateRate(userAccount.getAccountId(), newRating);
+
+        //then
+        UserAccount find = userAccountService.getRate(nickname);
+
+        assertEquals(userAccount.getAccountId(), find.getAccountId());
+        assertEquals(userAccount.getNickname(), find.getNickname());
+        assertEquals(newRating, find.getRatingScore());
+    }
+
+    @DisplayName("유저정보를 수정 할 수 있다 ")
+    @Test
+    @Transactional // 테스트 후 트랜잭션 롤백
+    public void testUpdates() throws InterruptedException {
+        // Given
+        String nickname = "xyamat0x";
+        int newRating = 200;
+
+        UserAccount userAccount = UserAccount.builder()
+                .nickname(nickname)
+                .accountId("1")
+                .build();
+        userAccountRepository.save(UserAccountEntity.from(userAccount));
+
+        //when
+        userAccountService.test(userAccount.getAccountId(), newRating);
+
+        Thread.sleep(5000);
+
+        //then
+        UserAccount find = userAccountService.getRate(nickname);
+
+        assertEquals(userAccount.getAccountId(), find.getAccountId());
+        assertEquals(userAccount.getNickname(), find.getNickname());
+        assertEquals(newRating, find.getRatingScore());
+    }
+
+
 }

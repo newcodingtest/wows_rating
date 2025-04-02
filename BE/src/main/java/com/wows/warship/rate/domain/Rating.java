@@ -16,7 +16,12 @@ import java.util.concurrent.TimeUnit;
 public class Rating {
     private int ratingScore;
     private int battleCount;
-    private double wins;
+    private double winRate;
+    private double killRate;
+    private double damage;
+    private double tanking;
+    private double spot;
+
 
     public static Rating calculate(BattlesHistory battlesHistory, Map<Long, ShipInfo> expected){
        boolean isExistShip = expected.containsKey(battlesHistory.getShipNumber());
@@ -25,6 +30,11 @@ public class Rating {
        }
 
        ShipInfo shipInfo = expected.get(battlesHistory.getShipNumber());
+
+        return calculate(battlesHistory, shipInfo);
+    }
+
+    public static Rating calculate(BattlesHistory battlesHistory, ShipInfo shipInfo){
 
         double capScore = (battlesHistory.getTeamCapPoint() != 0)
                 ? (battlesHistory.getCapPoint() / (double) battlesHistory.getTeamCapPoint()) * 0.3
@@ -42,13 +52,13 @@ public class Rating {
         double teamContributionScore = capScore+spotScore+tankScore;
 
         double expectedKill = 0.5;
-        if (expected.containsKey("average_frags")){
+        if (shipInfo.getAverageKill()!=0){
             expectedKill = shipInfo.getAverageKill();
         }
 
         double killScore = (battlesHistory.getBattles() != 0)
                 ? (battlesHistory.getKill()/battlesHistory.getBattles())/expectedKill
-                : battlesHistory.getBattles()/expectedKill;
+                : 0;
 
         double expectedDMG = shipInfo.getAverageDmg();
         double dmgScore = battlesHistory.getDamage()/expectedDMG;
@@ -73,11 +83,12 @@ public class Rating {
 
         return Rating.builder()
                 .ratingScore((int)rating)
-                .wins(winning)
+                .winRate(winning)
+                .killRate(killScore)
                 .build();
     }
 
-    public static Rating calculate(List<BattlesHistory> battlesHistory, Map<Long, ShipInfo> expected, int untilDays){
+    public static Rating calculatesAverage(List<BattlesHistory> battlesHistory, Map<Long, ShipInfo> expected, int untilDays){
         int totalRating = 0;
         int cnt = 0;
         double wins = 0;
@@ -86,7 +97,7 @@ public class Rating {
                 try {
                     Rating result = calculate(battlesHistory.get(i), expected);
                     totalRating+=result.getRatingScore();
-                    wins+=result.getWins();
+                    wins+=result.getWinRate();
                     cnt++;
                 }catch (NoSuchElementException e){
                 }
@@ -102,7 +113,7 @@ public class Rating {
         return Rating.builder()
                 .ratingScore(totalRating)
                 .battleCount(cnt)
-                .wins(wins*100)
+                .winRate(wins*100)
                 .build();
     }
 

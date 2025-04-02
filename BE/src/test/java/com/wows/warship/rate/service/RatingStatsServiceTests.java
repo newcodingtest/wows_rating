@@ -5,9 +5,10 @@ import com.wows.warship.rate.api.response.RatingStaticsResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
-
+@ConditionalOnProperty(name = "spring.redis.enabled", havingValue = "true")
 @ActiveProfiles("test")
 @SpringBootTest
 public class RatingStatsServiceTests {

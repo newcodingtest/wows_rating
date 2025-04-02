@@ -6,6 +6,7 @@ import com.wows.warship.account.entity.UserAccountEntity;
 import com.wows.warship.common.exception.WowsErrorCode;
 import com.wows.warship.common.exception.WowsException;
 import com.wows.warship.account.repository.UserAccountRepository;
+import com.wows.warship.common.service.WowsApiService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,21 +22,15 @@ import java.util.stream.Collectors;
 @Service
 public class UserAccountService {
 
-    @Value("${wows.api.key}")
-    private String apiKey;
 
-    private final WowsApiClient wowsApiClient;
+    private final WowsApiService wowsApiService;
 
     private final UserAccountRepository userAccountRepository;
 
-    @Async
-    public void update(String nickname, int rating){
-        uppateRate(nickname, rating);
-    }
-
     @Transactional
-    private void uppateRate(String nickname, int rating){
-        UserAccountEntity account = userAccountRepository.findByNickname(nickname).get();
+    public void uppateRate(String accountId, int rating){
+        log.info("update catch");
+        UserAccountEntity account = userAccountRepository.findByAccountId(accountId).get();
 
         account.changeRatingScore(rating);
     }
@@ -61,7 +56,7 @@ public class UserAccountService {
     }
 
     private UserAccount isUserExistInApi(String nickname) {
-        Map<String, Object> response = wowsApiClient.getAccountList(apiKey, nickname);
+        Map<String, Object> response = wowsApiService.getUserAccountInfo(nickname);
 
         ArrayList<Map<String, String>> actual = (ArrayList)response.get("data");
 

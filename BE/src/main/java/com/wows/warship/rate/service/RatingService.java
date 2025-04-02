@@ -3,7 +3,6 @@ package com.wows.warship.rate.service;
 import com.wows.warship.common.service.WowsApiService;
 import com.wows.warship.history.domain.BattlesHistory;
 import com.wows.warship.history.service.BattlesHistoryService;
-import com.wows.warship.rate.domain.Rating;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;

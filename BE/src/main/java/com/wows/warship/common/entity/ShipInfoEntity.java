@@ -41,4 +41,17 @@ public class ShipInfoEntity {
                 .health(health)
                 .build();
     }
+
+    public static ShipInfoEntity from(ShipInfo shipInfo){
+        return ShipInfoEntity.builder()
+                .shipId(shipInfo.getShipId())
+                .shipName(shipInfo.getShipName())
+                .averageDmg(shipInfo.getAverageDmg())
+                .averageKill(shipInfo.getAverageKill())
+                .averageWinRate(shipInfo.getAverageWinRate())
+                .tier(shipInfo.getTier())
+                .health(shipInfo.getHealth())
+                .build();
+    }
+
 }

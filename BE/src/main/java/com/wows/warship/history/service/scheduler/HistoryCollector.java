@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
-public class RatingCollector {
+public class HistoryCollector {
 
     private final BattlesHistoryService battlesHistoryService;
     private final UserAccountService userAccountService;

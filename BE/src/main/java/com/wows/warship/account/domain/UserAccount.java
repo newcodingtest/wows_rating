@@ -13,5 +13,12 @@ public class UserAccount {
     private int ratingScore;
     private int wins;
 
+    public boolean hasBattleRecord(){
+        if (ratingScore==0){
+            return false;
+        }
+        return true;
+    }
+
 
 }

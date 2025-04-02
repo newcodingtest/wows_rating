@@ -1,5 +1,7 @@
 package com.wows.warship.history.service;
 
+import com.wows.warship.common.domain.ShipInfo;
+import com.wows.warship.common.service.ShipInfoService;
 import com.wows.warship.history.domain.BattlesHistory;
 import com.wows.warship.history.entity.BattlesHistoryEntity;
 import com.wows.warship.history.repository.BattlesHistoryRepository;
@@ -9,7 +11,6 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -19,17 +20,14 @@ import java.util.stream.Collectors;
 public class BattlesHistoryService {
 
     private final BattlesHistoryRepository battlesHistoryRepository;
+    private final ShipInfoService shipInfoService;
 
     /**
      * 저장 시 (last_battle_time,accountId) 를 비교후에 저장.
      *
      * */
-    @Async
-    public void save(List<BattlesHistory> battles, String accountId){
-      saveDB(battles,accountId);
-    }
     @Transactional
-    private void saveDB(List<BattlesHistory> battles, String accountId){
+    public void save(List<BattlesHistory> battles, String accountId){
         List<BattlesHistoryEntity> existingHistory = battlesHistoryRepository.findByAccountId(accountId);
 
         // 기존 last_battle_time 값들을 Set으로 저장
@@ -40,7 +38,11 @@ public class BattlesHistoryService {
         // 중복되지 않은 데이터만 저장
         List<BattlesHistoryEntity> newBattles = battles.stream()
                 .filter(battle -> !existingTimes.contains(battle.getLastPlayTime()))
-                .map(battle -> BattlesHistoryEntity.from(battle, accountId))
+                .filter(battle -> shipInfoService.getShipInfo().containsKey(battle.getShipNumber())) // Ship 정보가 있는 경우만 처리
+                .map(battle -> {
+                    ShipInfo ship = shipInfoService.getShipInfo().get(battle.getShipNumber());
+                    return BattlesHistoryEntity.from(battle, ship, accountId);
+                })
                 .collect(Collectors.toList());
 
         if (!newBattles.isEmpty()) {
@@ -48,16 +50,15 @@ public class BattlesHistoryService {
         }
     }
 
-    @Cacheable(value = "history", key = "#accountId")
+
+    /**
+     * 유저 히스토리 조회
+     * */
     public List<BattlesHistory> getBattleHistory(String accountId){
         return battlesHistoryRepository.findByAccountId(accountId)
                 .stream()
                 .map(BattlesHistoryEntity::toModel)
                 .filter(battle -> battle.getMaxXp()>0)
                 .collect(Collectors.toList());
-    }
-
-    public void updateHistory(String accountId){
-
     }
 }

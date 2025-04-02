@@ -30,9 +30,9 @@ public class RatingUpdater {
         for (UserAccount user : users){
             List<BattlesHistory> histories = battlesHistoryService.getBattleHistory(user.getAccountId());
 
-            Rating rating = Rating.calculate(histories, shipInfoMap, 10000);
+            Rating rating = Rating.calculatesAverage(histories, shipInfoMap, 10000);
 
-            userAccountService.update(user.getNickname(), rating.getRatingScore());
+            userAccountService.uppateRate(user.getNickname(), rating.getRatingScore());
         }
     }
 }

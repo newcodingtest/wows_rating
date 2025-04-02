@@ -6,10 +6,9 @@ import com.wows.warship.common.service.BucketLimiter;
 import com.wows.warship.rate.api.response.RatingStaticsResponse;
 import com.wows.warship.rate.service.RatingService;
 import com.wows.warship.rate.service.RatingStatsService;
-import io.github.bucket4j.Bandwidth;
+
 import io.github.bucket4j.Bucket;
-import io.github.bucket4j.Refill;
-import jakarta.servlet.http.HttpServletRequest;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -19,9 +18,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.Duration;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 
 @Slf4j
@@ -40,7 +36,7 @@ public class RatingApi {
      * */
     @GetMapping("/rate/{nickname}")
     public ResponseEntity<RatingStaticsResponse> getUserRate(@PathVariable("nickname")String nickname){
-        RatingStaticsResponse ratingStaticsResponse = ratingStatsService.getRating(nickname);
+        RatingStaticsResponse ratingStaticsResponse = ratingStatsService.getRatingV1(nickname);
         log.info("{}", ratingStaticsResponse);
 
         return ResponseEntity.ok(ratingStaticsResponse);
