@@ -36,7 +36,7 @@ public class RatingApi {
      * */
     @GetMapping("/rate/{nickname}")
     public ResponseEntity<RatingStaticsResponse> getUserRate(@PathVariable("nickname")String nickname){
-        RatingStaticsResponse ratingStaticsResponse = ratingStatsService.getRatingV1(nickname);
+        RatingStaticsResponse ratingStaticsResponse = ratingStatsService.getRating(nickname);
         log.info("{}", ratingStaticsResponse);
 
         return ResponseEntity.ok(ratingStaticsResponse);

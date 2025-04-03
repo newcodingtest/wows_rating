@@ -92,12 +92,14 @@ public class Rating {
         int totalRating = 0;
         int cnt = 0;
         double wins = 0;
+        double killRate = 0;
         for (int i=0; i<battlesHistory.size(); i++){
             if (diffTimeStampDays(battlesHistory.get(i).getLastPlayTime())<untilDays){
                 try {
                     Rating result = calculate(battlesHistory.get(i), expected);
                     totalRating+=result.getRatingScore();
                     wins+=result.getWinRate();
+                    killRate+=result.getKillRate();
                     cnt++;
                 }catch (NoSuchElementException e){
                 }
@@ -109,11 +111,13 @@ public class Rating {
         if (cnt>0){
             totalRating/=cnt;
             wins/=cnt;
+            killRate/=cnt;
         }
         return Rating.builder()
                 .ratingScore(totalRating)
                 .battleCount(cnt)
                 .winRate(wins*100)
+                .killRate(killRate)
                 .build();
     }
 

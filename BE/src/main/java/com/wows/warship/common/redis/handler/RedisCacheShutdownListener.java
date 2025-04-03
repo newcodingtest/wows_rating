@@ -1,4 +1,4 @@
-package com.wows.warship.common.config;
+package com.wows.warship.common.redis.handler;
 
 import jakarta.annotation.PreDestroy;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;

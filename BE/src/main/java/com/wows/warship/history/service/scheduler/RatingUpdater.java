@@ -23,7 +23,7 @@ public class RatingUpdater {
 
     private final ShipInfoService shipInfoService;
 
-    @Scheduled(cron = "${wows.task.scheduling.cron}")
+    @Scheduled(cron = "0 0 5 * * *")
     public void updateRating(){
         List<UserAccount> users = userAccountService.getAccounts();
         Map<Long, ShipInfo> shipInfoMap = shipInfoService.getShipInfo();

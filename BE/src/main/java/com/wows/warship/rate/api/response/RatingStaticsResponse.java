@@ -25,6 +25,8 @@ public class RatingStaticsResponse {
     @Builder
     public static class Overall {
         private int ratingScore;
+        private double wins;
+        private double killRate;
     }
     @NoArgsConstructor
     @AllArgsConstructor
@@ -35,6 +37,7 @@ public class RatingStaticsResponse {
         private int numOfGames;
         private int ratingScore;
         private double wins;
+        private double killRate;
     }
     @NoArgsConstructor
     @AllArgsConstructor
@@ -45,6 +48,7 @@ public class RatingStaticsResponse {
         private int numOfGames;
         private int ratingScore;
         private double wins;
+        private double killRate;
     }
     @NoArgsConstructor
     @AllArgsConstructor
@@ -55,5 +59,6 @@ public class RatingStaticsResponse {
         private int numOfGames;
         private int ratingScore;
         private double wins;
+        private double killRate;
     }
 }

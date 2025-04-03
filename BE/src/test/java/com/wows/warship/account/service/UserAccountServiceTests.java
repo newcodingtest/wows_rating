@@ -125,7 +125,7 @@ public class UserAccountServiceTests {
         userAccountRepository.save(UserAccountEntity.from(userAccount));
 
         //when
-        userAccountService.test(userAccount.getAccountId(), newRating);
+        userAccountService.uppateRate(userAccount.getAccountId(), newRating);
 
         Thread.sleep(5000);
 

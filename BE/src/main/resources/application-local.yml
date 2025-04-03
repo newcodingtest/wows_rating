@@ -17,7 +17,8 @@ spring:
       data-locations: classpath:shipinfo.sql
 
   datasource:
-    url: jdbc:h2:mem:db
+    #url: jdbc:h2:mem:db
+    url: jdbc:h2:file:./data/demo-db
     driver-class-name: org.h2.Driver
     username: sa
     password: password
@@ -32,6 +33,12 @@ spring:
     redis:
       host: 192.168.1.190
       port: 6379
+    cache:
+      ignore-exceptions: true # Redis 장애 시 예외 무시
+    lettuce:
+      pool:
+        enabled: true
+      optional: true # ✅ Redis가 없어도 예외를 던지지 않도록 설정
 
 server:
   port: 8081

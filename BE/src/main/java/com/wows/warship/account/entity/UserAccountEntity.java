@@ -31,6 +31,14 @@ public class UserAccountEntity extends BaseTimeEntity {
     @ColumnDefault("0")
     private int ratingScore;
 
+    @Column(name = "승률")
+    @ColumnDefault("0")
+    private int winRate;
+
+    @Column(name = "킬 퍼센트")
+    @ColumnDefault("0")
+    private int killRate;
+
 
     public static UserAccountEntity from(UserAccount userAccount){
         return UserAccountEntity.builder()

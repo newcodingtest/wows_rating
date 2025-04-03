@@ -11,10 +11,13 @@ import com.wows.warship.rate.api.response.RatingStaticsResponse;
 import com.wows.warship.account.domain.UserAccount;
 import com.wows.warship.rate.domain.Rating;
 import com.wows.warship.account.service.UserAccountService;
+import io.netty.channel.ConnectTimeoutException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.dao.DataAccessException;
+import org.springframework.data.redis.RedisConnectionFailureException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -55,17 +58,17 @@ public class RatingStatsService {
 
             //전적 히스토리 저장
             applicationEventPublisher.publishEvent(CreatedBattleHistoryEvent.builder()
-                                                    .accountId(accountId)
-                                                    .battles(apiHistory)
-                                                    .build());
-            
+                    .accountId(accountId)
+                    .battles(apiHistory)
+                    .build());
+
             RatingStaticsResponse ratingStaticsResponse = createRatingStatics(calculateRatings(apiHistory,
-                                                                                            shipInfoMap));
+                    shipInfoMap));
 
             applicationEventPublisher.publishEvent(UpdatedUserRatingEvent.builder()
-                                                    .accountId(find.getAccountId())
-                                                    .rating(ratingStaticsResponse.getOverall().getRatingScore())
-                                                    .build());
+                    .accountId(find.getAccountId())
+                    .rating(ratingStaticsResponse.getOverall().getRatingScore())
+                    .build());
 
             return ratingStaticsResponse;
         }
@@ -77,36 +80,6 @@ public class RatingStatsService {
                 .accountId(find.getAccountId())
                 .rating(ratingStaticsResponse.getOverall().getRatingScore())
                 .build());
-
-        return ratingStaticsResponse;
-    }
-
-    @Cacheable(value = "rating", key = "#nickname")
-    public RatingStaticsResponse getRatingV1(String nickname) {
-        UserAccount find = userAccountService.getRate(nickname);
-        String accountId = find.getAccountId();
-        Map<Long, ShipInfo> shipInfoMap = shipInfoService.getShipInfo();
-
-        // 처음 조회해서 DB에 히스토리가 없을 때
-        if (!find.hasBattleRecord()) {
-            log.info("db 에 없습니다.");
-            List<BattlesHistory> apiHistory = fetchApiHistory(accountId);
-
-            //전적 히스토리 저장
-            battlesHistoryService.save(apiHistory, accountId);
-
-            RatingStaticsResponse ratingStaticsResponse = createRatingStatics(calculateRatings(apiHistory,
-                    shipInfoMap));
-
-            userAccountService.uppateRate(accountId, ratingStaticsResponse.getOverall().getRatingScore());
-
-            return ratingStaticsResponse;
-        }
-        // 기존 데이터가 있는 경우
-        log.info("db 에 있습니다.");
-        RatingStaticsResponse ratingStaticsResponse = createRatingStatics(calculateRatingsForExistingUser(find, accountId, shipInfoMap));
-
-        userAccountService.uppateRate(accountId, ratingStaticsResponse.getOverall().getRatingScore());
 
         return ratingStaticsResponse;
     }
@@ -128,15 +101,14 @@ public class RatingStatsService {
 
         List<BattlesHistory> pastHistory = battlesHistoryService.getBattleHistory(accountId);
         Rating todayRating = Rating.calculatesAverage(todayHistory, shipInfoMap, 1);
-        int pastRating = user.getRatingScore();
         Rating weekRating = Rating.calculatesAverage(pastHistory, shipInfoMap, 7);
-        Rating monthRating = Rating.calculatesAverage(pastHistory, shipInfoMap, 10000);
-        int overallRating = (int) ((todayRating.getRatingScore() + pastRating) / 2);
-
+        Rating overallRating = Rating.builder()
+                .ratingScore(user.getRatingScore())
+                .build();
         return Map.of(
                 1, todayRating,
                 7, weekRating,
-                10000, monthRating // overallRating == monthRating
+                10000, overallRating // overallRating == monthRating
         );
     }
 
@@ -154,21 +126,29 @@ public class RatingStatsService {
         log.info("over: {}, today: {}, week: {}, month: {}", overRating, todayRating, weekRating, monthRating);
         RatingStaticsResponse.Overall overall = RatingStaticsResponse.Overall.builder()
                 .ratingScore(overRating)
+                .wins(ratings.get(10000).getWinRate())
+                .killRate(ratings.get(10000).getKillRate())
                 .build();
 
         RatingStaticsResponse.Today today = RatingStaticsResponse.Today.builder()
                 .ratingScore(ratings.get(1).getRatingScore())
                 .numOfGames(ratings.get(1).getBattleCount())
+                .wins(ratings.get(1).getWinRate())
+                .killRate(ratings.get(1).getKillRate())
                 .build();
 
         RatingStaticsResponse.Week week = RatingStaticsResponse.Week.builder()
                 .ratingScore(ratings.get(7).getRatingScore())
                 .numOfGames(ratings.get(7).getBattleCount())
+                .wins(ratings.get(7).getWinRate())
+                .killRate(ratings.get(7).getKillRate())
                 .build();
 
         RatingStaticsResponse.Month month = RatingStaticsResponse.Month.builder()
                 .ratingScore(ratings.get(10000).getRatingScore())
                 .numOfGames(ratings.get(10000).getBattleCount())
+                .wins(ratings.get(10000).getWinRate())
+                .killRate(ratings.get(10000).getKillRate())
                 .build();
 
         return RatingStaticsResponse.builder()
