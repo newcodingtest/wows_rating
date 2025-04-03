@@ -88,13 +88,34 @@ public class Rating {
                 .build();
     }
 
-    public static Rating calculatesAverage(List<BattlesHistory> battlesHistory, Map<Long, ShipInfo> expected, int untilDays){
+    public static Rating getToday(List<BattlesHistory> battlesHistory, Map<Long, ShipInfo> expected){
+        return calculatesAverage(battlesHistory, expected,0,1);
+    }
+
+    public static Rating getWeek(List<BattlesHistory> battlesHistory, Map<Long, ShipInfo> expected){
+        return calculatesAverage(battlesHistory, expected,1,7);
+    }
+
+    public static Rating getMonth(List<BattlesHistory> battlesHistory, Map<Long, ShipInfo> expected){
+        return calculatesAverage(battlesHistory, expected,7,30);
+    }
+
+    public static Rating getOver(List<BattlesHistory> battlesHistory, Map<Long, ShipInfo> expected){
+        return calculatesAverage(battlesHistory, expected,30,100000);
+    }
+
+    public static Rating getTotal(List<BattlesHistory> battlesHistory, Map<Long, ShipInfo> expected){
+        return calculatesAverage(battlesHistory, expected,0,100000);
+    }
+
+    private static Rating calculatesAverage(List<BattlesHistory> battlesHistory, Map<Long, ShipInfo> expected, int startDay, int endDay){
         int totalRating = 0;
         int cnt = 0;
         double wins = 0;
         double killRate = 0;
         for (int i=0; i<battlesHistory.size(); i++){
-            if (diffTimeStampDays(battlesHistory.get(i).getLastPlayTime())<untilDays){
+            long lastPlayTime = diffTimeStampDays(battlesHistory.get(i).getLastPlayTime());
+            if (startDay<=lastPlayTime && lastPlayTime<=endDay){
                 try {
                     Rating result = calculate(battlesHistory.get(i), expected);
                     totalRating+=result.getRatingScore();
@@ -103,8 +124,6 @@ public class Rating {
                     cnt++;
                 }catch (NoSuchElementException e){
                 }
-            } else {
-                break;
             }
         }
 

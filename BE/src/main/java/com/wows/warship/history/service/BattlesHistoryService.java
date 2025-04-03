@@ -26,28 +26,42 @@ public class BattlesHistoryService {
      * 저장 시 (last_battle_time,accountId) 를 비교후에 저장.
      *
      * */
-    @Transactional
+    //@Transactional
     public void save(List<BattlesHistory> battles, String accountId){
         List<BattlesHistoryEntity> existingHistory = battlesHistoryRepository.findByAccountId(accountId);
 
-        // 기존 last_battle_time 값들을 Set으로 저장
-        Set<Long> existingTimes = existingHistory.stream()
-                .map(BattlesHistoryEntity::getLastBattleTime)
-                .collect(Collectors.toSet());
+        if (existingHistory.size()>0){
+            // 기존 last_battle_time 값들을 Set으로 저장
+            Set<Long> existingTimes = existingHistory.stream()
+                    .map(BattlesHistoryEntity::getLastBattleTime)
+                    .collect(Collectors.toSet());
 
-        // 중복되지 않은 데이터만 저장
-        List<BattlesHistoryEntity> newBattles = battles.stream()
-                .filter(battle -> !existingTimes.contains(battle.getLastPlayTime()))
-                .filter(battle -> shipInfoService.getShipInfo().containsKey(battle.getShipNumber())) // Ship 정보가 있는 경우만 처리
-                .map(battle -> {
-                    ShipInfo ship = shipInfoService.getShipInfo().get(battle.getShipNumber());
-                    return BattlesHistoryEntity.from(battle, ship, accountId);
-                })
-                .collect(Collectors.toList());
+            // 중복되지 않은 데이터만 저장
+            List<BattlesHistoryEntity> newBattles = battles.stream()
+                    .filter(battle -> !existingTimes.contains(battle.getLastPlayTime()))
+                    .filter(battle -> shipInfoService.getShipInfo().containsKey(battle.getShipNumber())) // Ship 정보가 있는 경우만 처리
+                    .map(battle -> {
+                        ShipInfo ship = shipInfoService.getShipInfo().get(battle.getShipNumber());
+                        return BattlesHistoryEntity.from(battle, ship, accountId);
+                    })
+                    .collect(Collectors.toList());
 
-        if (!newBattles.isEmpty()) {
+            if (!newBattles.isEmpty()) {
+                battlesHistoryRepository.saveAll(newBattles);
+            }
+        } else {
+
+            List<BattlesHistoryEntity> newBattles = battles.stream()
+                    .filter(battle -> shipInfoService.getShipInfo().containsKey(battle.getShipNumber())) // Ship 정보가 있는 경우만 처리
+                    .map(battle -> {
+                        ShipInfo ship = shipInfoService.getShipInfo().get(battle.getShipNumber());
+                        return BattlesHistoryEntity.from(battle, ship, accountId);
+                    })
+                    .collect(Collectors.toList());
+
             battlesHistoryRepository.saveAll(newBattles);
         }
+
     }
 
 
@@ -58,7 +72,7 @@ public class BattlesHistoryService {
         return battlesHistoryRepository.findByAccountId(accountId)
                 .stream()
                 .map(BattlesHistoryEntity::toModel)
-                .filter(battle -> battle.getMaxXp()>0)
+                //.filter(battle -> battle.getMaxXp()<=0)
                 .collect(Collectors.toList());
     }
 }

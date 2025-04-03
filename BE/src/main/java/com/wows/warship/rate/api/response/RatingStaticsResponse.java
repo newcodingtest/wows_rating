@@ -13,17 +13,35 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class RatingStaticsResponse {
-    private Overall overall;
+    /**
+     * 전체 레이팅
+     * */
+    private Total tatal;
+
+    /**
+     * 오늘 레이팅
+     * */
     private Today today;
+
+    /**
+     * 일주일 레이팅
+     * */
     private Week week;
+
+    /**
+     * 한달 레이팅
+     * */
     private Month month;
+
+    private Over over;
 
     @NoArgsConstructor
     @AllArgsConstructor
     @ToString
     @Getter
     @Builder
-    public static class Overall {
+    public static class Total {
+        private int numOfGames;
         private int ratingScore;
         private double wins;
         private double killRate;
@@ -56,6 +74,18 @@ public class RatingStaticsResponse {
     @Getter
     @Builder
     public static class Month {
+        private int numOfGames;
+        private int ratingScore;
+        private double wins;
+        private double killRate;
+    }
+
+    @NoArgsConstructor
+    @AllArgsConstructor
+    @ToString
+    @Getter
+    @Builder
+    public static class Over {
         private int numOfGames;
         private int ratingScore;
         private double wins;

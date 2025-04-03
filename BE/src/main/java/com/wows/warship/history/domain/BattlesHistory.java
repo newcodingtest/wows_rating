@@ -73,13 +73,11 @@ public class BattlesHistory {
      * 
      * */
     private String battleType;
-    
-    
+
     /**
      * 경험치
      * */
     private int maxXp;
-
 
     public static BattlesHistory from(BattleHistoryApiResponse battleHistoryApiResponse) {
         return BattlesHistory.builder()
