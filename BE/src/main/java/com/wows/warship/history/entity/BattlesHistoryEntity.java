@@ -68,7 +68,7 @@ public class BattlesHistoryEntity extends BaseTimeEntity {
 
     public BattlesHistory toModel(){
         return BattlesHistory.builder()
-                .shipNumber(shipInfo.toModel().getShipId())
+                .shipNumber(shipInfo.getShipId())
                 .lastPlayTime(lastBattleTime)
                 .wins(wins)
                 .losses(losses)

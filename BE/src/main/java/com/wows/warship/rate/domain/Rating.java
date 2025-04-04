@@ -4,6 +4,7 @@ import com.wows.warship.common.domain.ShipInfo;
 import com.wows.warship.history.domain.BattlesHistory;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.ToString;
 
 import java.time.Instant;
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
+@ToString
 @Getter
 @Builder
 public class Rating {

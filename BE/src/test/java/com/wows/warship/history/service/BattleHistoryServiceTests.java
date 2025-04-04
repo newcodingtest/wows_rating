@@ -36,10 +36,25 @@ public class BattleHistoryServiceTests {
     public void getBattleHistoryTests(){
         //given
         String accountId = "2020639284";
-        ShipInfoEntity shipInfo = shipInfoRepository.save(ShipInfoEntity.builder().build());
+        ShipInfoEntity shipInfo = shipInfoRepository.save(ShipInfoEntity.builder()
+                        .shipId(1)
+                        .shipName("test ship")
+                        .averageKill(0.5f)
+                        .averageWinRate(0.2f)
+                        .health(10000)
+                        .averageDmg(10000)
+                .build());
+
         BattlesHistoryEntity created = BattlesHistoryEntity.builder()
                 .maxXp(1)
                 .kill(1)
+                .damage(100000)
+                .wins(2)
+                .losses(2)
+                .battles(4)
+                .spotPoint(100000)
+                .tankingPoint(10000)
+                .capPoint(1000)
                 .accountId(accountId)
                 .shipInfo(shipInfo)
                 .lastBattleTime(1L)
@@ -48,9 +63,9 @@ public class BattleHistoryServiceTests {
 
         //when
         List<BattlesHistory> find = battlesHistoryService.getBattleHistory(accountId);
-
-        System.out.println(find.get(0));
-
+        for (BattlesHistory bt : find){
+            System.out.println(bt);
+        }
         //then
         assertEquals(created.getMaxXp(), find.get(0).getMaxXp());
         assertEquals(created.getKill(), find.get(0).getKill());

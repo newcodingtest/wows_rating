@@ -1,10 +1,15 @@
 package com.wows.warship.history.api.response;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.wows.warship.common.domain.ShipInfo;
 import com.wows.warship.history.domain.BattlesHistory;
 import com.wows.warship.rate.domain.Rating;
 import lombok.Builder;
+import lombok.Getter;
+import lombok.ToString;
 
+@Getter
+@ToString
 @Builder
 public class RateHistoryResponse {
 
@@ -32,6 +37,8 @@ public class RateHistoryResponse {
      * */
     private double tanking;
 
+    private int rating;
+
     /**
      * 마지막 플레이 시간
      *
@@ -41,6 +48,7 @@ public class RateHistoryResponse {
 
     public static RateHistoryResponse from(BattlesHistory battlesHistory, ShipInfo shipInfo, Rating rating){
         return RateHistoryResponse.builder()
+                .rating(rating.getRatingScore())
                 .shipName(shipInfo.getShipName())
                 .winsRate(rating.getWinRate())
                 .damage(rating.getDamage())
