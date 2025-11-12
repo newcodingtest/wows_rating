@@ -45,6 +45,8 @@ public class RateHistoryResponse {
      * */
     private long lastPlayTime;
 
+    private String battleType;
+
 
     public static RateHistoryResponse from(BattlesHistory battlesHistory, ShipInfo shipInfo, Rating rating){
         return RateHistoryResponse.builder()
@@ -55,6 +57,7 @@ public class RateHistoryResponse {
                 .killRate(rating.getKillRate())
                 .tanking(rating.getTanking())
                 .lastPlayTime(battlesHistory.getLastPlayTime())
+                .battleType(battlesHistory.getBattleType())
                 .build();
     }
 }

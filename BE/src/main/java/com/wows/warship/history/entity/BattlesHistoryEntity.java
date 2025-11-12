@@ -80,6 +80,7 @@ public class BattlesHistoryEntity extends BaseTimeEntity {
                 .damage(damage)
                 .tankingPoint(tankingPoint)
                 .maxXp(maxXp)
+                .battleType(battleType)
                 .build();
     }
 }

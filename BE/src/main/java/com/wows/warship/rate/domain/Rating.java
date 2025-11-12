@@ -110,7 +110,10 @@ public class Rating {
         return calculatesAverage(battlesHistory, expected,0,100000);
     }
 
-    private static Rating calculatesAverage(List<BattlesHistory> battlesHistory, Map<Long, ShipInfo> expected, int startDay, int endDay){
+    private static Rating calculatesAverage(List<BattlesHistory> battlesHistory,
+                                            Map<Long, ShipInfo> expected,
+                                            int startDay,
+                                            int endDay){
         int totalRating = 0;
         int cnt = 0;
         double wins = 0;
